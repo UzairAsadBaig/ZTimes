@@ -1,0 +1,53 @@
+.counter_container{
+  margin-right: 0!important;
+  padding: 0!important;
+  margin-left: 0!important;
+}
+.announce_time{
+  padding: 0;
+ 
+}
+.announce_time .announce_time_text{
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.announce_time .stop_time{
+  background-color: #ff7e03;
+  font-weight: bold;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+.counter{
+  text-align: center;
+  margin-top: 7rem;
+  margin-bottom: 6rem;
+  width: 100vw !important;
+}
+.count{
+  display: inline;
+  padding: 0rem 2.8rem;
+  margin: .5rem;
+  font-size: 7rem;
+  border: .9rem solid #ff7e03;
+  font-weight: 600;
+  /* outline: 1px solid orangered; */
+  /* background-color: rgb(233, 231, 231); */
+  border-radius: 50%;
+}
+
+
+.draw_results{
+  background-color: black;
+  width: 100vw;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.draw_result_text{
+  font-size: 2.5rem;
+}

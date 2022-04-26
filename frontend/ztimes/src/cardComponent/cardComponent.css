@@ -1,0 +1,32 @@
+
+.card_heading{
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  color: #ff7e03;
+  font-size: 3.5rem;
+}
+
+.card_container{
+  background-color: #ff7e03;
+  color: white;
+  border-radius: 2rem;
+  width: 85%;
+  padding: 1rem 2rem;
+}
+
+.cards{
+  padding: .8rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.card_text{
+  background-color: #b25802;
+  padding: 2rem ;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: auto;
+  border-radius: 2rem;
+  height: 60vh;
+}
