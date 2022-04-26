@@ -6,7 +6,22 @@ const { RangePicker } = DatePicker;
 
 
 export default function CounterComp() {
-  const [placement, SetPlacement] = React.useState('topLeft');
+  const [random, setRandom] = React.useState({
+    num1:0,
+    num2:0,
+    num3:0,
+    num4:0,
+  });
+  
+  setInterval(function(){   
+    setRandom({
+      num1:Math.floor(Math.random() * 10),
+      num2:Math.floor(Math.random() * 10),
+      num3:Math.floor(Math.random() * 10),
+      num4:Math.floor(Math.random() * 10),
+    });
+    console.log('oooo');
+ }, 500);
 
   return (
     <div>
@@ -18,10 +33,10 @@ export default function CounterComp() {
           </div>
         </div>
           <div className="counter">
-              <div className="count">8</div>
-              <div className="count">7</div>
-              <div className="count">2</div>
-              <div className="count">9</div>
+              <div className="count">{random.num1}</div>
+              <div className="count">{random.num2}</div>
+              <div className="count">{random.num3}</div>
+              <div className="count">{random.num4}</div>
         </div>
          <div className="draw_results">
            <p className="draw_result_text">
