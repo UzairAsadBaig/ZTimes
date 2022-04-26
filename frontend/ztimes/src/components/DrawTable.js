@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table, Tag, Space } from 'antd';
-
+import './../css/DrawTable.css'
 export default function DrawTable() {
     const { Column, ColumnGroup } = Table;
 
@@ -19,17 +19,15 @@ export default function DrawTable() {
 
 
     <>
-<Table dataSource={data}>
-  <ColumnGroup title="Date">
-      <Column title="Time" dataIndex="time" key="time" />
-      <Column title="Draw" dataIndex="draw" key="draw" />
-  </ColumnGroup>
-  
-   
+    <div>
 
-  
-   
+<Table dataSource={data} >
+  <ColumnGroup title="Date" style={{"backgroundColor":'blue'}}  >
+      <Column title="Time" dataIndex="time" align='center' key="time" />
+      <Column title="Draw" dataIndex="draw" align='center' key="draw" />
+  </ColumnGroup>
   </Table>
+    </div>
     
     
     </>

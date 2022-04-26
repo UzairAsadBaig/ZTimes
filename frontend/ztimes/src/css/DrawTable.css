@@ -1,0 +1,4 @@
+div  .ant-table-container table > thead > tr:first-child th:last-child {
+    background-color: '#FF7E03' !important;
+}
+

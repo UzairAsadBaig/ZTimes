@@ -10,11 +10,11 @@ function App() {
     <>
     {/* <CardComp/> */}
     {/* <CounterComp/> */}
-<DrawTable/>
       <Navbar />
       <Landing />
       <MobileAPP />
       <CounterComp />
+<DrawTable/>
     </>
   )}
 
