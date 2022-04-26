@@ -27,7 +27,7 @@ export default function CounterComp() {
            <p className="draw_result_text">
              All draw results
            </p>
-           <RangePicker className='RangePicker'   style={{ height: "3.5rem", width: "37rem",marginBottom:'3rem',marginTop:'2rem' }}/>
+           <RangePicker className='RangePicker' placeholder={['SELECT START DATE','SELECT END DATE']}   style={{ height: "3.5rem", width: "37rem",marginBottom:'3rem',marginTop:'2rem' ,backgroundColor:'#ff7e03',color:'white',outline:'none',border:'none'}}/>
          </div>
       </div>
       
