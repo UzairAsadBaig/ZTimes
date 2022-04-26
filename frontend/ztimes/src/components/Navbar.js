@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './../css/Navbar.css'
 import $ from "jquery";
+import { Link } from 'react-router-dom';
 
 
 
@@ -35,14 +36,14 @@ const Navbar=() => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link nav_links fw-bold nav_active" href="/">HOME</a>
+              <Link className="nav-link nav_links fw-bold nav_active" to="/">HOME</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav_links fw-bold" href="/">LIVE TV</a>
+              <Link className="nav-link nav_links fw-bold" to='/live'>LIVE TV</Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link nav_links fw-bold" href="/">DRAW</a>
+              <Link className="nav-link nav_links fw-bold" to="/draw">DRAW</Link>
             </li>
 
             <li className="nav-item">

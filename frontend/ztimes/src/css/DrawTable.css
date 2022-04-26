@@ -1,4 +1,20 @@
-div  .ant-table-container table > thead > tr:first-child th:last-child {
-    background-color: '#FF7E03' !important;
+.ant-table-container table > thead > tr:first-child th:last-child{
+    background-color: #FF7E03 !important;
+    color: white;
+    border-bottom: 2px solid white;
 }
 
+.ant-table-thead > tr > th{
+    background-color: #FF7E03 !important;
+    color: white;
+    border: 2px solid white;
+}
+.ant-table-row{
+    background-color: black !important;
+    color: white !important;
+    pointer-events: none;
+}
+
+.ant-table-cell{
+    border: 1px solid white !important;
+}

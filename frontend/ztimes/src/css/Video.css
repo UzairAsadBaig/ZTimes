@@ -9,5 +9,6 @@
 }
 
 .video-js.vjs-fluid:not(.vjs-audio-only-mode) {
-  margin-top: 22rem;
+  margin-top: 10rem;
+  margin-bottom: 6rem;
 }
