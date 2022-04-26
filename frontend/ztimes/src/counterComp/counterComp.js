@@ -20,7 +20,7 @@ export default function CounterComp() {
       num3:Math.floor(Math.random() * 10),
       num4:Math.floor(Math.random() * 10),
     });
-    console.log('oooo');
+    // console.log('oooo');
  }, 500);
 
   return (

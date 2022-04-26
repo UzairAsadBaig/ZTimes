@@ -1,0 +1,13 @@
+.vjs-matrix .vjs-big-play-button {
+  border-color: #00ff00;
+}
+
+.video-js .vjs-big-play-button {
+  border: 1px solid #FF7E03 !important;
+  margin-left: 44%;
+  margin-top: 18%;
+}
+
+.video-js.vjs-fluid:not(.vjs-audio-only-mode) {
+  margin-top: 22rem;
+}
