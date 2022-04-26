@@ -1,0 +1,54 @@
+#landing {
+  padding-top: 7rem;
+}
+
+
+.landing_heading {
+  color: #FF7E03;
+  font-size: 5rem;
+}
+
+.landing_heading2 {
+  margin-top: -1.3rem;
+  color: #FF7E03;
+  font-size: 2.4rem;
+}
+
+.landing_heading2>span {
+  color: black;
+  text-decoration: underline;
+}
+
+.landing_para {
+  color: #FF7E03;
+  font-size: 1.4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+}
+
+.left_sec {
+
+  width: 65%;
+  padding-left: 2rem;
+  padding-top: 9rem;
+
+}
+
+.right_sec {
+  background-color: #FF7E03;
+  padding-top: 8rem;
+  padding-bottom: 1rem;
+}
+
+.corporate_img img {
+  height: 400px;
+  /* width: 200px; */
+}
+
+.watch_btn {
+  color: white !important;
+  background-color: black !important;
+  font-size: 24px !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}

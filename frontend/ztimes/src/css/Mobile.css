@@ -1,0 +1,28 @@
+.mobile_app_desc {
+  width: 80%;
+  padding-top: 2rem;
+}
+
+.mobile_app_heading {
+  color: #FF7E03;
+  font-size: 4rem;
+}
+
+.mobile_app_heading2 {
+  font-size: 2rem;
+  margin-top: -1rem;
+}
+
+.mobile_app_para {
+  margin-top: 1.6rem;
+}
+
+.live_tv_btn,
+.draw_btn {
+  font-size: 2.5rem !important;
+  color: white !important;
+  padding-left: 4rem !important;
+  padding-right: 4rem !important;
+  background-color: #FF7E03 !important;
+  width: 80%;
+}
