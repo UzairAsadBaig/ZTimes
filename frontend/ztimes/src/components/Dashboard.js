@@ -50,7 +50,7 @@ function onChangeDate(date, dateString) {
 <div className='container p-5'  style={{ marginTop:'8rem'}}>
 <div className='text-center mt-3 mb-5'> <h3>Announcement:</h3> </div>
 
-<Card className='mx-auto px-4 py-2' style={{ width: 700 , borderRadius:'7px' }}>
+        <Card data-aos="zoom-in-down" data-aos-duration="800" className='mx-auto px-4 py-2' style={{ width: 700, borderRadius: '7px' }}>
   <h6 className='my-3'>Enter winner digits and time:</h6>
   <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
       <Form.Item

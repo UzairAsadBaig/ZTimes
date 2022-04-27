@@ -34,21 +34,21 @@ export default function CounterComp() {
       <div className="container counter_container my-5">
         <div className="row">
           <div className="col-3 announce_time">
-            <p className='announce_time_text'>Draw stop time</p>
-            <p className="stop_time">10:00 am</p>
+            <p className='announce_time_text' data-aos="slide-right">Draw stop time</p>
+            <p className="stop_time" data-aos="slide-right">10:00 am</p>
           </div>
         </div>
-          <div className="counter row justify-content-center">
+        <div className="counter row justify-content-center" data-aos="zoom-in">
               <div className="count">{random.num1}</div>
               <div className="count">{random.num2}</div>
               <div className="count">{random.num3}</div>
               <div className="count">{random.num4}</div>
         </div>
          <div className="draw_results">
-           <p className="draw_result_text">
+          <p className="draw_result_text" data-aos="zoom-in">
              All draw results
            </p>
-           <RangePicker className='RangePicker' placeholder={['SELECT START DATE','SELECT END DATE']} onChange={onChange}  style={{ height: "3.5rem", width: "37rem",marginBottom:'3rem',marginTop:'2rem' ,backgroundColor:'#ff7e03',color:'white',outline:'none',border:'none'}}/>
+          <RangePicker className='RangePicker' data-aos="zoom-in" placeholder={[ 'SELECT START DATE', 'SELECT END DATE' ]} onChange={onChange} style={{ height: "3.5rem", width: "37rem", marginBottom: '3rem', marginTop: '2rem', backgroundColor: '#ff7e03', color: 'white', outline: 'none', border: 'none' }} />
          </div>
       </div>
       

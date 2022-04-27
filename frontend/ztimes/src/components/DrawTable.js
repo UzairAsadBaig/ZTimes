@@ -56,7 +56,7 @@ export default function DrawTable() {
 
 
     <>
-    <div className='p-5'>
+      <div className='p-5' data-aos="zoom-in-right">
 <Table className='my-5'  dataSource={data} columns={columns} pagination={false} >
   </Table>
     </div>

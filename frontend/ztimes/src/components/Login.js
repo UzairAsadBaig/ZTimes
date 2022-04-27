@@ -26,7 +26,9 @@ export default function Login() {
       initialValues={{ remember: true }}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      autoComplete="off"
+            autoComplete="off"
+            data-aos="zoom-in-down"
+            data-aos-duration="700"
       >
       <Form.Item
         label="Email"

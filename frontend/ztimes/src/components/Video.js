@@ -25,7 +25,7 @@ export default function App() {
       <div className="my-5">
 
 
-        <video id="my-video" className="video-js vjs-theme-city vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+        <video id="my-video" data-aos="zoom-in" className="video-js vjs-theme-city vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
           <source src={require( './../video.mp4' )} type="video/mp4" />
 
           <p className="vjs-no-js">

@@ -10,8 +10,21 @@ import 'antd/dist/antd.css';
 import Video from "./components/Video";
 import Footer from './components/Footer'
 import Login from "./components/Login";
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
+
+
 
 function App() {
+
+  useEffect( () => {
+    Aos.init( { duration: 2000, offset: 50, once: true } );
+  }, [] )
+
+
+
   return (
     <>
       {/* <Navbar /> */}
@@ -21,8 +34,8 @@ function App() {
 
 <Route exact path="/" element={
           <>
-           <Navbar />
-      <Landing />
+            <Navbar />
+            <Landing key="1" />
       <MobileAPP />
             <CardComp />
             <Footer/>
@@ -31,8 +44,8 @@ function App() {
 
 <Route exact path="/draw" element={
       <>
-       <Navbar />
-      <Landing />
+            <Navbar />
+            <Landing key="2" />
 <CounterComp />
 <DrawTable />
 <Footer/>
@@ -45,8 +58,8 @@ function App() {
 
 <Route exact path="/live" element={
   <>
-   <Navbar />
-      <Landing />
+            <Navbar />
+            <Landing key="3" />
   <Video />
   <Footer/>
   </>
