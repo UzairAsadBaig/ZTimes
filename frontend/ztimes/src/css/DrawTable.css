@@ -6,7 +6,7 @@
 
 .ant-table-thead > tr > th{
     background-color: #FF7E03 !important;
-    color: white;
+    color: white !important;
     border: 2px solid white;
 }
 .ant-table-row{
@@ -17,4 +17,7 @@
 
 .ant-table-cell{
     border: 1px solid white !important;
+}
+.ant-table{
+    border-radius: 20px !important;
 }

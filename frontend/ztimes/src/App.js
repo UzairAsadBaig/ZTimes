@@ -9,12 +9,12 @@ import DrawTable from './components/DrawTable';
 import 'antd/dist/antd.css';
 import Video from "./components/Video";
 import Footer from './components/Footer'
+import Login from "./components/Login";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Landing />
+     
 
 
     <Routes>
@@ -22,15 +22,21 @@ function App() {
 
 <Route exact path="/" element={
           <>
+           <Navbar />
+      <Landing />
       <MobileAPP />
             <CardComp />
+            <Footer/>
       </>
       }/>
 
 <Route exact path="/draw" element={
       <>
+       <Navbar />
+      <Landing />
 <CounterComp />
 <DrawTable />
+<Footer/>
 
       </>
       }/>
@@ -39,16 +45,21 @@ function App() {
 
 
 <Route exact path="/live" element={
+  <>
+   <Navbar />
+      <Landing />
   <Video />
+  <Footer/>
+  </>
 } />
   
+  <Route exact path="/admin/login" element={<Login/>}/>
 
-        <Route exact path="/dashboard" element={
+        <Route exact path="/admin/dashboard" element={
           <Dashboard />
         } />
 
     </Routes>
-      <Footer/>
 
     </>
   )

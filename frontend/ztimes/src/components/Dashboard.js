@@ -1,22 +1,34 @@
 import React from 'react'
+import { useState } from 'react';
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined ,NumberOutlined } from '@ant-design/icons';
+import { Card ,DatePicker } from 'antd';
+import { Select } from 'antd';
+
+
 
 
 
 export default function Dashboard() {
 
+
     const [form] = Form.useForm();
 
     const onFinish = (values) => {
         console.log('Finish:', values);
+        form.resetFields()
       };
     
+      const { Option } = Select;
+
+function onChangeDate(date, dateString) {
+  console.log(date, dateString);
+}
   return (
-    <>
-    <nav className="navbar navbar-expand-lg bg-dark fixed-top">
+    <div style={{ overflowY:"hidden"}}>
+    <nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor:' rgba(0,0,0,0.8)'}}>
       <div className="container">
-        <a className="navbar-brand text-white" href="/">Z-Time</a>
+        <a className="navbar-brand text-white" href="/"><img style={{width:'6rem', height:'3rem'}} src={require('./../img/logo-01.png')} alt="" /></a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon" />
 
@@ -34,7 +46,146 @@ export default function Dashboard() {
     </nav> 
 
 
-    <div className='container p-5' style={{ marginTop:'8rem'}}>
+
+<div className='container p-5'  style={{ marginTop:'8rem'}}>
+<div className='text-center mt-3 mb-5'> <h3>Announcement:</h3> </div>
+
+<Card className='mx-auto px-4 py-2' style={{ width: 700 , borderRadius:'7px' }}>
+  <h6 className='my-3'>Enter winner digits and time:</h6>
+  <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
+      <Form.Item
+        name="digit1"
+        rules={[
+          {
+            required: true,
+            message: 'required!',
+          },
+        ]}
+      >
+         <Select style={{ width: 50 }} allowClear>
+      <Option value="0">0</Option>
+      <Option value="1">1</Option>
+      <Option value="2">2</Option>
+      <Option value="3">3</Option>
+      <Option value="4">4</Option>
+      <Option value="5">5</Option>
+      <Option value="6">6</Option>
+      <Option value="7">7</Option>
+      <Option value="8">8</Option>
+      <Option value="9">9</Option>
+    </Select>
+      </Form.Item> <Form.Item
+        name="digit2"
+        rules={[
+          {
+            required: true,
+            message: 'required!',
+          },
+        ]}
+      >
+         <Select style={{ width: 50 }} allowClear>
+         <Option value="0">0</Option>
+      <Option value="1">1</Option>
+      <Option value="2">2</Option>
+      <Option value="3">3</Option>
+      <Option value="4">4</Option>
+      <Option value="5">5</Option>
+      <Option value="6">6</Option>
+      <Option value="7">7</Option>
+      <Option value="8">8</Option>
+      <Option value="9">9</Option>
+    </Select>
+      </Form.Item>
+       <Form.Item
+        name="digit3"
+        rules={[
+          {
+            required: true,
+            message: 'required!',
+          },
+        ]}
+      >
+         <Select prefix={<UserOutlined className="site-form-item-icon" />} style={{ width: 50 }} allowClear>
+         <Option value="0">0</Option>
+      <Option value="1">1</Option>
+      <Option value="2">2</Option>
+      <Option value="3">3</Option>
+      <Option value="4">4</Option>
+      <Option value="5">5</Option>
+      <Option value="6">6</Option>
+      <Option value="7">7</Option>
+      <Option value="8">8</Option>
+      <Option value="9">9</Option>
+    </Select>
+      </Form.Item> <Form.Item
+        name="digit4"
+        rules={[
+          {
+            required: true,
+            message: 'required!',
+          },
+        ]}
+      >
+         <Select style={{ width: 50 }} allowClear>
+         <Option value="0">0</Option>
+      <Option value="1">1</Option>
+      <Option value="2">2</Option>
+      <Option value="3">3</Option>
+      <Option value="4">4</Option>
+      <Option value="5">5</Option>
+      <Option value="6">6</Option>
+      <Option value="7">7</Option>
+      <Option value="8">8</Option>
+      <Option value="9">9</Option>
+    </Select>
+      </Form.Item>
+      <Form.Item  name="dateTime"
+        rules={[
+          {
+            required: true,
+            message: 'required!',
+          },
+        ]}>
+      <DatePicker required showTime onChange={onChangeDate} />
+
+      </Form.Item>
+   
+      <Form.Item shouldUpdate>
+        {() => (
+          <Button
+          style={{color:'white', backgroundColor:'#FF7E03'}}
+            htmlType="submit"
+            disabled={
+              !form.isFieldsTouched(true) ||
+              !!form.getFieldsError().filter(({ errors }) => errors.length).length
+            }
+          >
+          Generate
+          </Button>
+        )}
+      </Form.Item>
+    </Form>
+
+  </Card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {/* <div className='container p-5' style={{ marginTop:'8rem'}}>
     <div className='text-center mt-3 mb-5'> <h3>Announcement:</h3> </div>
 
 
@@ -151,7 +302,7 @@ export default function Dashboard() {
     </div>
 
     
+    </div> */}
     </div>
-    </>
   )
 }

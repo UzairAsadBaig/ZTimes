@@ -5,11 +5,11 @@ import Column from 'antd/lib/table/Column';
 export default function DrawTable() {
 
   const columns = [
+   
     {
-      title: '22-01-2022',
-      children: [
-        {
-          title: 'Time',
+  
+
+          title: 'Date and time',
           dataIndex: 'time',
           key: 'time',
           width: 50,
@@ -21,14 +21,7 @@ export default function DrawTable() {
           key: 'draw',
           align:'center',
           width: 50,
-
-
-        },
-      ],
-    },
-   
-   
-   
+        }, 
   ];
   
   const data = [
@@ -64,7 +57,7 @@ export default function DrawTable() {
 
     <>
     <div className='p-5'>
-<Table className='my-5' dataSource={data} columns={columns} pagination={false} >
+<Table className='my-5'  dataSource={data} columns={columns} pagination={false} >
   </Table>
     </div>
     

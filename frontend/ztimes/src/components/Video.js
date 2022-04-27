@@ -40,7 +40,7 @@ export default function App() {
 
       {/* <div className="mt-5">
 
-        <video id="my_video_1" className="video-js vjs-default-skin  vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+        <video id="my_video_1" className="video-js vjs-default-skin  vjx-matrix" width="100%" height="267px" controls poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"840:267", "playbackRates": [1, 1.5, 2] }'>
           <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
         </video>
 
