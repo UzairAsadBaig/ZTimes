@@ -25,6 +25,9 @@ exports.getWinnerHistoryByRange=catchAysnc(async (req,res,next)=>{
  let {start,end}=req.body;
  start=new Date(start);
  end=new Date(end);
+ start=new Date(start.toUTCString());
+ end=new Date(end.toUTCString());
+ 
  let result = await Announcement.find({
   $and:[{date:{$gt:start}},{date:{$lt:end}}]
  })
@@ -40,15 +43,15 @@ res.status( 200 ).json( {
 
 
 exports.getTodaysWinners=catchAysnc(async (req,res,next)=>{
-  let cd=new Date(Date.now());
-  start=new Date(Date.UTC(cd.getFullYear(),cd.getMonth(),cd.getDate(),0,0,0,0));
+  let cd=new Date();
+  start=new Date(cd.toUTCString());
+  start= new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
   let end=new Date(start.getTime()+ (24 * 60 * 60 * 1000));
  let result = await Announcement.find({
    $and:[{date:{$gt:start}},{date:{$lt:end}}]
   })
-console.log(start);
-console.log(end);
-//  console.log(result);
+
+ console.log(start,end);
   if ( !result ) {
    return next( new AppError( `Could not find any winner within this range`, 404 ) );
  }

@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
 import CardComp from './components/cardComponent/cardComp';
 import CounterComp from './components/counterComp/counterComp';
-import DrawTable from './components/DrawTable';
 import 'antd/dist/antd.css';
 import Video from "./components/Video";
 import Footer from './components/Footer'
@@ -13,7 +12,7 @@ import Login from "./components/Login";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
-
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 
@@ -47,7 +46,6 @@ function App() {
             <Navbar />
             <Landing key="2" />
 <CounterComp />
-<DrawTable />
 <Footer/>
 
       </>
@@ -72,7 +70,9 @@ function App() {
   <Route exact path="/admin/login" element={<Login/>}/>
 
         <Route exact path="/admin/dashboard" element={
+          <ProtectedRoute>
           <Dashboard />
+          </ProtectedRoute>
         } />
 
     </Routes>

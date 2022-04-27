@@ -4,21 +4,48 @@ import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined ,NumberOutlined } from '@ant-design/icons';
 import { Card ,DatePicker } from 'antd';
 import { Select } from 'antd';
-
-
-
-
+import { setAnnouncements } from '../redux/announcementSlice';
+import { useDispatch,useSelector } from 'react-redux';
+import { useCreateAnnouncementMutation } from '../redux/nodeAPI';
+import { useSnackbar } from 'notistack';
+import Cook from 'js-cookie';
+import { Link } from 'react-router-dom';
 
 export default function Dashboard() {
 
-
+    const [createAnnouncement]=useCreateAnnouncementMutation();
+    const {enqueueSnackbar}=useSnackbar();
     const [form] = Form.useForm();
+    const onFinish =async (values) => {
+        const announceData= {
+        winner:{
+          num1:values.digit1,
+          num2:values.digit2,
+          num3:values.digit3,
+          num4:values.digit4,
+        },
+        date:values.dateTime._d,
+        }
+        
+        console.log(announceData);
+        const res=await createAnnouncement(announceData);
+        console.log(res);
 
-    const onFinish = (values) => {
-        console.log('Finish:', values);
-        form.resetFields()
+        if(res.data && res.data.status==='success'){
+          enqueueSnackbar( "Annoucement added successfully!", { variant: 'success' } );
+          form.resetFields()
+        }else{
+          enqueueSnackbar( "Something went wrong!", { variant: 'error' } ); 
+        }
+
       };
     
+
+      const handleLogout=()=>{
+       Cook.remove('JWT'); 
+      }
+
+
       const { Option } = Select;
 
 function onChangeDate(date, dateString) {
@@ -36,7 +63,7 @@ function onChangeDate(date, dateString) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link nav_links text-white" href="/">Logout</a>
+              <Link className="nav-link nav_links text-white" to='/admin/login' onClick={handleLogout}>Logout</Link>
             </li>
           </ul>
 

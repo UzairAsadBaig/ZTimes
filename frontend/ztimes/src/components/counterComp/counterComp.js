@@ -1,15 +1,28 @@
 import React,{useEffect, useState} from 'react'
 import './counterComp.css';
 import { DatePicker} from 'antd';
+import DrawTable from '../DrawTable';
+import { useGetTodyasWinnersQuery } from '../../redux/nodeAPI';
+import { setAnnouncements } from '../../redux/announcementSlice';
+import { useDispatch } from 'react-redux';
 
 const { RangePicker } = DatePicker;
 
+
 const onChange=function(v){
-   console.log(v);
+  console.log(v);
 };
 
 
+
 export default function CounterComp() {
+  
+  const {data,isLoading,isSuccess} =  useGetTodyasWinnersQuery();
+  const dispatch=useDispatch();
+  if(data && !isLoading && isSuccess){
+    dispatch(setAnnouncements(data.data));
+  }
+
   const [random, setRandom] = React.useState({
     num1:0,
     num2:1,
@@ -52,6 +65,9 @@ export default function CounterComp() {
          </div>
       </div>
       
+
+      {/* Table */}
+    <DrawTable/>
     </div>
   )
 }

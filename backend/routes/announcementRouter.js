@@ -5,9 +5,9 @@ const Router=express.Router();
 
 
 //Optimize:   ***** Routes ******
+Router.post("/winnerhistory",getWinnerHistoryByRange).get("/winners",getTodaysWinners);
 Router.use(protect);
 Router.route("/").get( getAnnouncement ).post(createAnnouncement);
-Router.post("/winnerhistory",getWinnerHistoryByRange).get("/winners",getTodaysWinners);
 Router.route( "/:id" )
   .get( getSingleAnnouncement )
   .delete( deleteAnnouncement )
