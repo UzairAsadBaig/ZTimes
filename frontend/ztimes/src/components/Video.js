@@ -22,25 +22,30 @@ export default function App() {
 
   return (
     <>
-      {/* <video id="my-video" className="video-js vjs-theme-city" controls preload="auto" width={640} height={264} poster="MY_VIDEO_POSTER.jpg">
-        <source src={require( './../video.mp4' )} type="video/mp4" />
-
-        <p className="vjs-no-js">
-          To view this video please enable JavaScript, and consider upgrading to a
-          web browser that
-        </p>
+      <div className="my-5">
 
 
-      </video> */}
+        <video id="my-video" className="video-js vjs-theme-city vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+          <source src={require( './../video.mp4' )} type="video/mp4" />
 
-      <div className="mt-5">
+          <p className="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+          </p>
+
+
+        </video>
+
+      </div>
+
+      {/* <div className="mt-5">
 
         <video id="my_video_1" className="video-js vjs-default-skin  vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
           <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
         </video>
 
 
-      </div>
+      </div> */}
 
 
     </>

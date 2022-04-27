@@ -23,7 +23,7 @@ const Landing=() => {
       <div className="col-md-6 right_sec">
 
         <div className="corporate_img text-center">
-          <img src={require( './../img/Group 614.png' )} className="img-fluid" alt="nothing" />
+          <img src={require( './../abc-01.png' )} className="img-fluid" alt="nothing" />
         </div>
 
 

@@ -12,3 +12,12 @@
   margin-top: 10rem;
   margin-bottom: 6rem;
 }
+video[poster] {
+  object-fit: fill;
+}
+
+.video-js {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+}

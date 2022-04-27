@@ -15,13 +15,15 @@ function App() {
     <>
       <Navbar />
       <Landing />
+
+
     <Routes>
 
 
 <Route exact path="/" element={
-      <>
-      <CardComp />
+          <>
       <MobileAPP />
+            <CardComp />
       </>
       }/>
 
@@ -40,7 +42,11 @@ function App() {
   <Video />
 } />
   
-{/* <Dashboard/> */}
+
+        <Route exact path="/dashboard" element={
+          <Dashboard />
+        } />
+
     </Routes>
       <Footer/>
 

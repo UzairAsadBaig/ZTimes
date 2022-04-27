@@ -13,7 +13,7 @@ const MobileAPP=() => {
 
 
 
-          <img src={require( './../img/mobile.jpg' )} className="img-fluid" alt="" />
+          <img src={require( './../mobile.png' )} className="img-fluid" alt="" />
 
         </div>
 
