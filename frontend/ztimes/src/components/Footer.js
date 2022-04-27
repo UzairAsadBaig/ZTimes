@@ -6,8 +6,8 @@ import EmailIcon from '@mui/icons-material/Email';
 export default function Footer() {
   return (
     <>
-    <div className='row' style={{backgroundColor:'#FF7E03'}}>
-        <div className='col-6 p-4'>
+    <div className='row mt-5' style={{backgroundColor:'#FF7E03'}}>
+        <div className='col-6 p-4 '>
             <h4 className='text-white text-center'>
                 ZEETIME
             </h4>

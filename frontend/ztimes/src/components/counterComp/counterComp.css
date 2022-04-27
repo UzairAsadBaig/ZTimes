@@ -28,15 +28,13 @@
   width: 100vw !important;
 }
 .count{
-  display: inline;
-  padding: 0rem 2.8rem;
   margin: .5rem;
+  margin-top: 5rem!important;
   font-size: 7rem;
   border: .9rem solid #ff7e03;
   font-weight: 600;
-  /* outline: 1px solid orangered; */
-  /* background-color: rgb(233, 231, 231); */
   border-radius: 50%;
+  width: 180px!important;
 }
 
 

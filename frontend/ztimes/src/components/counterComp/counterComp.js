@@ -1,27 +1,33 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './counterComp.css';
 import { DatePicker} from 'antd';
 
 const { RangePicker } = DatePicker;
 
+const onChange=function(v){
+   console.log(v);
+};
+
 
 export default function CounterComp() {
   const [random, setRandom] = React.useState({
     num1:0,
-    num2:0,
-    num3:0,
-    num4:0,
+    num2:1,
+    num3:7,
+    num4:5,
   });
   
-  setInterval(function(){   
-    setRandom({
-      num1:Math.floor(Math.random() * 10),
-      num2:Math.floor(Math.random() * 10),
-      num3:Math.floor(Math.random() * 10),
-      num4:Math.floor(Math.random() * 10),
-    });
-    // console.log('oooo');
- }, 500);
+  useEffect(()=>{
+    setInterval(function(){   
+      setRandom({
+        num1:Math.floor(Math.random() * 10),
+        num2:Math.floor(Math.random() * 10),
+        num3:Math.floor(Math.random() * 10),
+        num4:Math.floor(Math.random() * 10),
+      });
+      // console.log('oooo');
+   }, 800);
+  },[])
 
   return (
     <div>
@@ -32,7 +38,7 @@ export default function CounterComp() {
             <p className="stop_time">10:00 am</p>
           </div>
         </div>
-          <div className="counter">
+          <div className="counter row justify-content-center">
               <div className="count">{random.num1}</div>
               <div className="count">{random.num2}</div>
               <div className="count">{random.num3}</div>
@@ -42,7 +48,7 @@ export default function CounterComp() {
            <p className="draw_result_text">
              All draw results
            </p>
-           <RangePicker className='RangePicker' placeholder={['SELECT START DATE','SELECT END DATE']}   style={{ height: "3.5rem", width: "37rem",marginBottom:'3rem',marginTop:'2rem' ,backgroundColor:'#ff7e03',color:'white',outline:'none',border:'none'}}/>
+           <RangePicker className='RangePicker' placeholder={['SELECT START DATE','SELECT END DATE']} onChange={onChange}  style={{ height: "3.5rem", width: "37rem",marginBottom:'3rem',marginTop:'2rem' ,backgroundColor:'#ff7e03',color:'white',outline:'none',border:'none'}}/>
          </div>
       </div>
       

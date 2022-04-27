@@ -13,6 +13,7 @@ const AppError=require( './utils/appError' );
 const globalErrorHandler=require( './controllers/errorController' );
 //TODO: Include Routers
 const userRouter =require('./routes/userRouter')
+const announcementRouter=require('./routes/announcementRouter');
 
 
 
@@ -76,6 +77,8 @@ app.use( xss() ) //clean  malicious html code from user input
 
 //TODO: Use Router middleware
 app.use( '/api/v1/users', userRouter );
+app.use( '/api/v1/announcement', announcementRouter );
+
 
 
 //! Middleware for handling all other(ERROR) unhandled routes 
