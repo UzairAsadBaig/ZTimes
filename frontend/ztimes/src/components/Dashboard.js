@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button , Tag} from 'antd';
 import { UserOutlined, LockOutlined ,NumberOutlined } from '@ant-design/icons';
-import { Card ,DatePicker } from 'antd';
+import { Card  , Badge } from 'antd';
 import { Select } from 'antd';
 import { setAnnouncements } from '../redux/announcementSlice';
 import { useDispatch,useSelector } from 'react-redux';
@@ -10,35 +10,270 @@ import { useCreateAnnouncementMutation } from '../redux/nodeAPI';
 import { useSnackbar } from 'notistack';
 import Cook from 'js-cookie';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
+import SlotCard from './SlotCard';
+
 
 export default function Dashboard() {
 
     const [createAnnouncement]=useCreateAnnouncementMutation();
+
+
+    const { Option } = Select;
+
+
+
     const {enqueueSnackbar}=useSnackbar();
-    const [form] = Form.useForm();
-    const onFinish =async (values) => {
+
+
+    const [form1] = Form.useForm();
+    const [form2] = Form.useForm();
+    const [form3] = Form.useForm();
+    const [form4] = Form.useForm();
+    const [form5] = Form.useForm();
+
+
+    
+  const slot1Date = (moment().set("hour", 11).set("minute",30))._d
+  const slot2Date = (moment().set("hour", 1).set("minute",30))._d
+  const slot3Date = (moment().set("hour", 4).set("minute",30))._d
+  const slot4Date = (moment().set("hour", 7).set("minute",30))._d
+  const slot5Date = (moment().set("hour", 10).set("minute",30))._d
+
+
+
+
+    const onFinish1 =async (values) => {
         const announceData= {
-        winner:{
-          num1:values.digit1,
-          num2:values.digit2,
-          num3:values.digit3,
-          num4:values.digit4,
-        },
-        date:values.dateTime._d,
+        winner:[{
+          num1:values.slot1digit1,
+          num2:values.slot1digit2,
+          num3:values.slot1digit3,
+          num4:values.slot1digit4,
+        }],
+        date:slot1Date,
         }
         
         console.log(announceData);
+
         const res=await createAnnouncement(announceData);
+
         console.log(res);
 
         if(res.data && res.data.status==='success'){
           enqueueSnackbar( "Annoucement added successfully!", { variant: 'success' } );
-          form.resetFields()
+          form1.resetFields()
         }else{
           enqueueSnackbar( "Something went wrong!", { variant: 'error' } ); 
         }
 
       };
+
+
+
+      const onFinish2 =async (values) => {
+        console.log(values)
+          const announceData= {
+          winner:[{
+            num1:values.digit1,
+            num2:values.digit2,
+            num3:values.digit3,
+            num4:values.digit4,
+          },
+          {
+            num1:values.digit5,
+            num2:values.digit6,
+            num3:values.digit7,
+            num4:values.digit8,
+          },
+          {
+            num1:values.digit9,
+            num2:values.digit10,
+            num3:values.digit11,
+            num4:values.digit12,
+          },
+          {
+            num1:values.digit13,
+            num2:values.digit14,
+            num3:values.digit15,
+            num4:values.digit16,
+          },
+          {
+            num1:values.digit17,
+            num2:values.digit18,
+            num3:values.digit19,
+            num4:values.digit20,
+          },      
+        ],
+          date: slot2Date,
+          }
+          
+          console.log(announceData);
+          const res=await createAnnouncement(announceData);
+          console.log(res);
+  
+          if(res.data && res.data.status==='success'){
+            enqueueSnackbar( "Annoucement added successfully!", { variant: 'success' } );
+            form2.resetFields()
+          }else{
+            enqueueSnackbar( "Something went wrong!", { variant: 'error' } ); 
+          }
+  
+        };
+
+
+  
+
+
+          const onFinish3 =async (values) => {
+            console.log(values)
+              const announceData= {
+              winner:[{
+                num1:values.digit1,
+                num2:values.digit2,
+                num3:values.digit3,
+                num4:values.digit4,
+              },
+              {
+                num1:values.digit5,
+                num2:values.digit6,
+                num3:values.digit7,
+                num4:values.digit8,
+              },
+              {
+                num1:values.digit9,
+                num2:values.digit10,
+                num3:values.digit11,
+                num4:values.digit12,
+              },
+              {
+                num1:values.digit13,
+                num2:values.digit14,
+                num3:values.digit15,
+                num4:values.digit16,
+              },
+              {
+                num1:values.digit17,
+                num2:values.digit18,
+                num3:values.digit19,
+                num4:values.digit20,
+              },      
+            ],
+              date: slot3Date,
+              }
+              
+              console.log(announceData);
+              const res=await createAnnouncement(announceData);
+              console.log(res);
+      
+              if(res.data && res.data.status==='success'){
+                enqueueSnackbar( "Annoucement added successfully!", { variant: 'success' } );
+                form3.resetFields()
+              }else{
+                enqueueSnackbar( "Something went wrong!", { variant: 'error' } ); 
+              }
+      
+            };
+
+
+
+            const onFinish4 =async (values) => {
+                const announceData= {
+                winner:[{
+                  num1:values.digit1,
+                  num2:values.digit2,
+                  num3:values.digit3,
+                  num4:values.digit4,
+                },
+                {
+                  num1:values.digit5,
+                  num2:values.digit6,
+                  num3:values.digit7,
+                  num4:values.digit8,
+                },
+                {
+                  num1:values.digit9,
+                  num2:values.digit10,
+                  num3:values.digit11,
+                  num4:values.digit12,
+                },
+                {
+                  num1:values.digit13,
+                  num2:values.digit14,
+                  num3:values.digit15,
+                  num4:values.digit16,
+                },
+                {
+                  num1:values.digit17,
+                  num2:values.digit18,
+                  num3:values.digit19,
+                  num4:values.digit20,
+                },      
+              ],
+                date:slot4Date,
+                }
+                
+                console.log(announceData);
+                const res=await createAnnouncement(announceData);
+                console.log(res);
+        
+                if(res.data && res.data.status==='success'){
+                  enqueueSnackbar( "Annoucement added successfully!", { variant: 'success' } );
+                  form4.resetFields()
+                }else{
+                  enqueueSnackbar( "Something went wrong!", { variant: 'error' } ); 
+                }
+        
+              };  
+          const onFinish5 =async (values) => {
+          console.log(values)
+            const announceData= {
+            winner:[{
+              num1:values.digit1,
+              num2:values.digit2,
+              num3:values.digit3,
+              num4:values.digit4,
+            },
+            {
+              num1:values.digit5,
+              num2:values.digit6,
+              num3:values.digit7,
+              num4:values.digit8,
+            },
+            {
+              num1:values.digit9,
+              num2:values.digit10,
+              num3:values.digit11,
+              num4:values.digit12,
+            },
+            {
+              num1:values.digit13,
+              num2:values.digit14,
+              num3:values.digit15,
+              num4:values.digit16,
+            },
+            {
+              num1:values.digit17,
+              num2:values.digit18,
+              num3:values.digit19,
+              num4:values.digit20,
+            },      
+          ],
+            date: slot5Date,
+            }
+            
+            console.log(announceData);
+            const res=await createAnnouncement(announceData);
+            console.log(res);
+    
+            if(res.data && res.data.status==='success'){
+              enqueueSnackbar( "Annoucement added successfully!", { variant: 'success' } );
+              form5.resetFields()
+            }else{
+              enqueueSnackbar( "Something went wrong!", { variant: 'error' } ); 
+            }
+    
+          };
     
 
       const handleLogout=()=>{
@@ -46,11 +281,13 @@ export default function Dashboard() {
       }
 
 
-      const { Option } = Select;
 
-function onChangeDate(date, dateString) {
-  console.log(date, dateString);
-}
+
+
+
+
+
+
   return (
     <div style={{ overflowY:"hidden"}}>
     <nav className="navbar navbar-expand-lg fixed-top" style={{backgroundColor:' rgba(0,0,0,0.8)'}}>
@@ -74,14 +311,27 @@ function onChangeDate(date, dateString) {
 
 
 
-<div className='container p-5'  style={{ marginTop:'8rem'}}>
+<div className='container p-5'  style={{ marginTop:'5rem'}}>
 <div className='text-center mt-3 mb-5'> <h3>Announcement:</h3> </div>
 
-        <Card data-aos="zoom-in-down" data-aos-duration="800" className='mx-auto px-4 py-2' style={{ width: 700, borderRadius: '7px' }}>
-  <h6 className='my-3'>Enter winner digits and time:</h6>
-  <Form form={form} name="horizontal_login" layout="inline" onFinish={onFinish}>
+
+
+
+
+
+
+
+
+
+<div className='w-50 my-4 mx-auto'>
+<Badge.Ribbon placement='start' color="#FF7E03" text="Slot 1" className=''>
+        <Card data-aos="zoom-in-down" data-aos-duration="800" className='mx-auto' style={{ borderRadius: '7px' }}>
+        <Tag color="default" className='px-5 py-2' style={{marginLeft:'19rem'}}>{moment().format(`dddd, MMMM Do YYYY`)} 11:30 AM</Tag>
+
+  <h6 className='my-3'>Enter winner digits:</h6>
+  <Form form={form1} name="horizontal_login" layout="inline" onFinish={onFinish1}>
       <Form.Item
-        name="digit1"
+        name="slot1digit1"
         rules={[
           {
             required: true,
@@ -89,7 +339,7 @@ function onChangeDate(date, dateString) {
           },
         ]}
       >
-         <Select style={{ width: 50 }} allowClear>
+      <Select style={{ width: 50 }} allowClear>
       <Option value="0">0</Option>
       <Option value="1">1</Option>
       <Option value="2">2</Option>
@@ -101,12 +351,14 @@ function onChangeDate(date, dateString) {
       <Option value="8">8</Option>
       <Option value="9">9</Option>
     </Select>
-      </Form.Item> <Form.Item
-        name="digit2"
+      </Form.Item>
+
+       <Form.Item
+        name="slot1digit2"
         rules={[
           {
             required: true,
-            message: 'required!',
+            message: 'required!'
           },
         ]}
       >
@@ -123,8 +375,9 @@ function onChangeDate(date, dateString) {
       <Option value="9">9</Option>
     </Select>
       </Form.Item>
+
        <Form.Item
-        name="digit3"
+        name="slot1digit3"
         rules={[
           {
             required: true,
@@ -144,8 +397,10 @@ function onChangeDate(date, dateString) {
       <Option value="8">8</Option>
       <Option value="9">9</Option>
     </Select>
-      </Form.Item> <Form.Item
-        name="digit4"
+      </Form.Item>
+      
+       <Form.Item
+        name="slot1digit4"
         rules={[
           {
             required: true,
@@ -166,16 +421,7 @@ function onChangeDate(date, dateString) {
       <Option value="9">9</Option>
     </Select>
       </Form.Item>
-      <Form.Item  name="dateTime"
-        rules={[
-          {
-            required: true,
-            message: 'required!',
-          },
-        ]}>
-      <DatePicker required showTime onChange={onChangeDate} />
-
-      </Form.Item>
+     
    
       <Form.Item shouldUpdate>
         {() => (
@@ -183,8 +429,8 @@ function onChangeDate(date, dateString) {
           style={{color:'white', backgroundColor:'#FF7E03'}}
             htmlType="submit"
             disabled={
-              !form.isFieldsTouched(true) ||
-              !!form.getFieldsError().filter(({ errors }) => errors.length).length
+              !form1.isFieldsTouched(true) ||
+              !!form1.getFieldsError().filter(({ errors }) => errors.length).length
             }
           >
           Generate
@@ -193,143 +439,49 @@ function onChangeDate(date, dateString) {
       </Form.Item>
     </Form>
 
-  </Card>
+  </Card></Badge.Ribbon>
+  </div>
+
+
+
+
+  <SlotCard form={form2}  onFinish={onFinish2} slot='2' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  
+  
+  
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  <SlotCard form={form3}  onFinish={onFinish3}  slot='3' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  
+  
+  
+  
+  
+  
+  <SlotCard form={form4}  onFinish={onFinish4}  slot='4' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+
+
+   <SlotCard form={form5}  onFinish={onFinish5}  slot='5' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  
+  
+  
+  
+  
+
+
+
+
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {/* <div className='container p-5' style={{ marginTop:'8rem'}}>
-    <div className='text-center mt-3 mb-5'> <h3>Announcement:</h3> </div>
-
-
-
-
-
-
-    <div className='slot1'>
-    <h5>Slot 1</h5>
-    <Form form={form} name="horizontal_login"  onFinish={onFinish}>
-    <div className='row'>
-        <div className='col-1'>
-            <h6 className='ps-2 pt-1 pb-1 border'>
-            Winner 1:
-            </h6>
-        </div>
-
-    <div className='col-2'>
-
-    <Form.Item name="username" rules={[{ required: true, message: 'Enter first lucky number!' }]}>
-        <Input prefix={<NumberOutlined  className="site-form-item-icon"/>} placeholder="1st lucky number" />
-      </Form.Item>
-    </div>
-    <div className='col-2'>
-
-    <Form.Item name="username" rules={[{ required: true, message: 'Enter second lucky number!!' }]}>
-        <Input prefix={<NumberOutlined className="site-form-item-icon" />} placeholder="2nd lucky number"/>
-    </Form.Item>
-    </div> 
-    <div className='col-2'>
-
-    <Form.Item name="username" rules={[{ required: true, message: 'Enter second lucky number!!' }]}>
-        <Input prefix={<NumberOutlined className="site-form-item-icon" />} placeholder="2nd lucky number"/>
-    </Form.Item>
-    </div>
-    <div className='col-2'>
-
-    <Form.Item name="username" rules={[{ required: true, message: 'Enter second lucky number!!' }]}>
-        <Input prefix={<NumberOutlined className="site-form-item-icon" />} placeholder="2nd lucky number"/>
-    </Form.Item>
-    </div>
-
-    <div className='col-2'>
-    <Form.Item shouldUpdate>
-        {() => (
-            <Button
-            type="primary"
-            htmlType="submit"
-            disabled={
-                !form.isFieldsTouched(true) ||
-                !!form.getFieldsError().filter(({ errors }) => errors.length).length
-            }
-            >
-            Log in
-          </Button>
-        )}
-      </Form.Item>
-
-    </div>
-    </div>
-    </Form> 
-    </div>
-
-    <div className='slot2'>
-    <h5>Slot 2</h5>
-    <Form form={form} name="horizontal_login" onFinish={onFinish} >
-        <div className='row'>
-            <div className='col-4'>
-            <Form.Item name="username" rules={[{ required: true, message: 'Enter first lucky number!' }]}>
-        <Input prefix={<NumberOutlined  className="site-form-item-icon"/>} placeholder="1st lucky number" />
-      </Form.Item>
-
-            </div>
-            <div className='col-4'>
-            <Form.Item name="username" rules={[{ required: true, message: 'Enter first lucky number!' }]}>
-        <Input prefix={<NumberOutlined  className="site-form-item-icon"/>} placeholder="1st lucky number" />
-      </Form.Item>
-            </div>
-        </div>
-        <div className='row'>
-            <div className='col-4'>
-            <Form.Item name="username" rules={[{ required: true, message: 'Enter first lucky number!' }]}>
-        <Input prefix={<NumberOutlined  className="site-form-item-icon"/>} placeholder="1st lucky number" />
-      </Form.Item>
-            </div>
-            <div className='col-4'>
-            <Form.Item name="username" rules={[{ required: true, message: 'Enter first lucky number!' }]}>
-        <Input prefix={<NumberOutlined  className="site-form-item-icon"/>} placeholder="1st lucky number" />
-      </Form.Item>
-            </div>
-        </div>
-        <div className='row'>
-            <div className='col-4'>
-            <Form.Item shouldUpdate>
-        {() => (
-            <Button
-            type="primary"
-            htmlType="submit"
-            disabled={
-                !form.isFieldsTouched(true) ||
-                !!form.getFieldsError().filter(({ errors }) => errors.length).length
-            }
-            >
-            Log in
-          </Button>
-        )}
-      </Form.Item>
-
-            </div>
-        </div>
-
-    </Form>
-
-    </div>
-
-    
-    </div> */}
-    </div>
+</div>
   )
 }
