@@ -49,9 +49,11 @@ const announcementSchema=new mongoose.Schema( {
 
 //Todo: ********* Adding virtual properties ***********
 // *** Whatever return will be set to virtual property value
-// announcementSchema.virtual( 'nickName' ).get( function () {
-//   return this.name.slice(0,3);
-// } )
+announcementSchema.virtual( 'endTime' ).get( function () {
+  const min=2;
+  let end=new Date( this.date.getTime()+( min*60*1000 ) );
+  return end;
+} )
 
 
 

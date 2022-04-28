@@ -44,9 +44,11 @@ res.status( 200 ).json( {
 
 exports.getTodaysWinners=catchAysnc(async (req,res,next)=>{
   let cd=new Date();
-  start=new Date(cd.toUTCString());
-  start= new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
-  let end=new Date(start.getTime()+ (24 * 60 * 60 * 1000));
+  start=new Date( cd.getFullYear(), cd.getMonth(), cd.getDate() );
+  start=new Date( start.toUTCString() );
+  // new Date( year, monthIndex, day )
+  // start= new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+  let end=new Date( start.getTime()+( 24*60*60*1000 ) );
  let result = await Announcement.find({
    $and:[{date:{$gt:start}},{date:{$lt:end}}]
   })
@@ -59,4 +61,44 @@ exports.getTodaysWinners=catchAysnc(async (req,res,next)=>{
    status: 'success',
    data:result
  } )
- });
+} );
+
+
+exports.sendWinner=catchAysnc( async ( req, res, next ) => {
+
+
+  let cd=new Date();
+  start=new Date( cd.getFullYear(), cd.getMonth(), cd.getDate() );
+  start=new Date( start.toUTCString() );
+
+
+
+  let end=new Date( start.getTime()+( 24*60*60*1000 ) );
+  let TodayWinners=await Announcement.find( {
+    $and: [ { date: { $gt: start } }, { date: { $lt: end } } ]
+  } )
+
+
+  let currTime=new Date( cd.toUTCString() );
+  console.log( "=>>>", currTime );
+
+  const result=TodayWinners.filter( el => el.date<=currTime&&el.endTime>currTime );
+
+
+
+
+  // console.log( start, end );
+  if ( !result ) {
+    return next( new AppError( `Could not find any winner within this range`, 404 ) );
+  }
+
+
+
+
+  res.status( 200 ).json( {
+    status: 'success',
+    data: result,
+    counterFlag: result.length>0? false:true
+  } )
+} );
+

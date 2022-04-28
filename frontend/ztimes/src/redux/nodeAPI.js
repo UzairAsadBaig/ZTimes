@@ -43,16 +43,30 @@ export const nodeAPI=createApi( {
     } ),
 
 
-    getTodyasWinners: builder.query( {
+    getWinner: builder.query( {
       query: ( body ) => ( {
-        url: '/announcement/winners',
+        url: '/announcement/currentwinner',
         method: 'GET',
       } ),
-      invalidatesTags: [ 'Annoucements' ],
+      providesTags: [ 'Annoucements' ],
     } ),
+
+    getHistory: builder.mutation( {
+
+      query: ( body ) => ( {
+        url: '/announcement/winnerhistory',
+        method: 'POST',
+        body
+      } ),
+
+
+
+    } ),
+
+
 
 } )
 
 });
 
-export const { useLoginMutation,useCreateAnnouncementMutation,useGetTodyasWinnersQuery}=nodeAPI;
+export const { useLoginMutation, useCreateAnnouncementMutation, useGetWinnerQuery, useGetHistoryMutation }=nodeAPI;

@@ -2,7 +2,10 @@ import React from 'react'
 import { Table } from 'antd';
 import './../css/DrawTable.css'
 import Column from 'antd/lib/table/Column';
-export default function DrawTable() {
+
+
+
+export default function DrawTable( props ) {
 
   const columns = [
    
@@ -23,33 +26,17 @@ export default function DrawTable() {
           width: 50,
         }, 
   ];
-  
-  const data = [
-    {
-      key: '1',
-      time: 'John Brown',
-      draw: 32,
-    
-    },
-    {
-      key: '2',
-      time: 'Jim Green',
-      draw: 42,
-    }, {
-      key: '3',
-      time: 'Jim Green',
-      draw: 42,
-    }, {
-      key: '4',
-      time: 'Jim Green',
-      draw: 42,
-    }, {
-      key: '5',
-      time: 'Jim Green',
-      draw: 42,
-    },
-  
-  ];
+
+
+  const data=props.tableData? props.tableData.map( ( el, i ) => {
+
+    return {
+      key: i,
+      time: new Date( el.date ).toLocaleString(),
+      draw: el.winner.num1+el.winner.num2+el.winner.num3+el.winner.num4
+    }
+
+  } ):[];
 
 
   return (
