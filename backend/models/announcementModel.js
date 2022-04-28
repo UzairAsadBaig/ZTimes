@@ -6,7 +6,7 @@ const validator=require( "validator" );  // 3rd part validation package
 //TODO:  *********  Modal Schema ***********
 const announcementSchema=new mongoose.Schema( {
   
-  winner: {
+  winners: [{
     num1:{
       required: [ true, "Please provide winner number" ],
       type:Number,
@@ -23,7 +23,7 @@ const announcementSchema=new mongoose.Schema( {
       required: [ true, "Please provide winner number" ],
       type:Number,
     },
-  },
+  }],
 
   date:{
       type: Date,
