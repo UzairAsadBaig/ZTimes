@@ -14,6 +14,12 @@ import moment from 'moment';
 import SlotCard from './SlotCard';
 
 
+
+function convertTZ( date, tzString ) {
+  return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
+}
+
+
 export default function Dashboard() {
 
     const [createAnnouncement]=useCreateAnnouncementMutation();
@@ -34,18 +40,18 @@ export default function Dashboard() {
 
 
     
-  const slot1Date = (moment().set("hour", 11).set("minute",30))._d
-  const slot2Date = (moment().set("hour", 1).set("minute",30))._d
-  const slot3Date = (moment().set("hour", 4).set("minute",30))._d
-  const slot4Date = (moment().set("hour", 7).set("minute",30))._d
-  const slot5Date = (moment().set("hour", 10).set("minute",30))._d
+  const slot1Date=convertTZ( ( moment().set( "hour", 11 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
+  const slot2Date=convertTZ( ( moment().set( "hour", 13 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
+  const slot3Date=convertTZ( ( moment().set( "hour", 16 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
+  const slot4Date=convertTZ( ( moment().set( "hour", 19 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
+  const slot5Date=convertTZ( ( moment().set( "hour", 22 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
 
 
 
 
     const onFinish1 =async (values) => {
         const announceData= {
-        winner:[{
+          winners: [ {
           num1:values.slot1digit1,
           num2:values.slot1digit2,
           num3:values.slot1digit3,
@@ -74,7 +80,7 @@ export default function Dashboard() {
       const onFinish2 =async (values) => {
         console.log(values)
           const announceData= {
-          winner:[{
+            winners: [ {
             num1:values.digit1,
             num2:values.digit2,
             num3:values.digit3,
@@ -128,7 +134,7 @@ export default function Dashboard() {
           const onFinish3 =async (values) => {
             console.log(values)
               const announceData= {
-              winner:[{
+                winners: [ {
                 num1:values.digit1,
                 num2:values.digit2,
                 num3:values.digit3,
@@ -179,7 +185,7 @@ export default function Dashboard() {
 
             const onFinish4 =async (values) => {
                 const announceData= {
-                winner:[{
+                  winners: [ {
                   num1:values.digit1,
                   num2:values.digit2,
                   num3:values.digit3,
@@ -228,7 +234,7 @@ export default function Dashboard() {
           const onFinish5 =async (values) => {
           console.log(values)
             const announceData= {
-            winner:[{
+              winners: [ {
               num1:values.digit1,
               num2:values.digit2,
               num3:values.digit3,

@@ -13,16 +13,32 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useState } from "react";
+import CounterResult from "./components/CounterResult";
 
 
 
+
+function convertTZ( date, tzString ) {
+  return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
+}
 function App() {
+  const [ currTime, setCurrTime ]=useState( new Date().toLocaleTimeString( [], { timeStyle: 'short' } ) )
 
   useEffect( () => {
     Aos.init( { duration: 2000, offset: 50, once: true } );
+
+    setInterval( () => {
+
+      setCurrTime( new Date().toLocaleTimeString( [], { timeStyle: 'short' } ) );
+
+    }, 2000 );
+
   }, [] )
 
+  // const currTime=convertTZ(new Date()).toLocaleTimeString( [], { timeStyle: 'short' } );
 
+  const slot1=[ "12:35 AM", "12:36 AM", "12:37 AM", "12:38 AM", "12:39 AM", "12:40 AM" ]
 
   return (
     <>
@@ -36,7 +52,7 @@ function App() {
             <Navbar />
             <Landing key="1" />
       <MobileAPP />
-            <CardComp />
+            {/* <CardComp /> */}
             <Footer/>
       </>
       }/>
@@ -52,13 +68,16 @@ function App() {
       }/>
 
 
+        {console.log( currTime==='11:33 AM' )}
 
 
 <Route exact path="/live" element={
   <>
             <Navbar />
             <Landing key="3" />
-  <Video />
+            {slot1.includes( currTime )? <CounterResult />:<Video />}
+
+            {/* <Video /> */}
   <Footer/>
   </>
 } />

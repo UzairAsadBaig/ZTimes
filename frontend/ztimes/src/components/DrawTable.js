@@ -7,6 +7,11 @@ import Column from 'antd/lib/table/Column';
 
 export default function DrawTable( props ) {
 
+
+  function convertTZ( date, tzString ) {
+    return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
+  }
+
   const columns = [
    
     {
@@ -28,12 +33,19 @@ export default function DrawTable( props ) {
   ];
 
 
+  console.log( props.tableData&&props.tableData )
+
   const data=props.tableData? props.tableData.map( ( el, i ) => {
 
     return {
+
       key: i,
       time: new Date( el.date ).toLocaleString(),
-      draw: el.winner.num1+el.winner.num2+el.winner.num3+el.winner.num4
+      draw: `1st: ( ${el.winners[ 0 ].num1}${el.winners[ 0 ].num2}${el.winners[ 0 ].num2}${el.winners[ 0 ].num4} )
+
+      ${el.winners.length>1? `- 2nd: ( ${el.winners[ 1 ].num1}${el.winners[ 1 ].num2}${el.winners[ 1 ].num2}${el.winners[ 1 ].num4}, ${el.winners[ 2 ].num1}${el.winners[ 2 ].num2}${el.winners[ 2 ].num2}${el.winners[ 2 ].num4}, ${el.winners[ 3 ].num1}${el.winners[ 3 ].num2}${el.winners[ 3 ].num2}${el.winners[ 3 ].num4}, ${el.winners[ 4 ].num1}${el.winners[ 4 ].num2}${el.winners[ 4 ].num2}${el.winners[ 4 ].num4} )`:''}
+      `
+
     }
 
   } ):[];

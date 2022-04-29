@@ -18,6 +18,7 @@
     "jquery": "^3.6.0",
     "js-cookie": "^3.0.1",
     "moment": "^2.29.3",
+    "moment-timezone": "^0.5.34",
     "notistack": "^2.0.4",
     "react": "^18.0.0",
     "react-animated-css": "^1.2.1",
