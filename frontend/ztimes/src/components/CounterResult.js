@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import './counterComp/counterComp.css';
 import { useGetWinnerQuery } from '../redux/nodeAPI';
+import { useRef } from 'react';
 
 
 
 const CounterResult=() => {
 
 
+
+  const welcomeRef = useRef(null);
+  const counterRef = useRef(null);
 
 
   const [ random, setRandom ]=useState( {
@@ -21,6 +25,11 @@ const CounterResult=() => {
   console.log( !isLoading&&data );
 
 
+  setTimeout(() => {
+    // welcomeRef.current.style.display = 'none';
+  counterRef.current.style.display = 'inline-flex';
+
+  }, 5000);
 
   useEffect( () => {
     setInterval( function () {
@@ -33,24 +42,21 @@ const CounterResult=() => {
 
     }, 10 );
 
+  
+
 
 
 
   }, [] )
 
 
-  // useEffect(() => {
-
-
-
-
-  // }, [])
-
-
   return (
 
-
-    <div className="counter row justify-content-center" data-aos="zoom-in">
+<>
+<h1 ref={welcomeRef}  data-aos="zoom-in" className=" text-center welcome_draw">Welcome to live draw</h1>
+    
+    
+    <div ref={counterRef} style={{display:'none'}} className="counter row justify-content-center" data-aos="zoom-in">
 
 
       <div className="count">{random.num1}</div>
@@ -62,15 +68,16 @@ const CounterResult=() => {
 
 
       {/* cw&&cw.map( ( el, i ) => {
-                return <>
-                  <h1 className='text-center' style={{ textDecoration: "underline" }}>Winner {cw?.length>1? i+1:""}</h1>
-                  <div className="count">{el.winner.num1}</div><div className="count">{el.winner.num2}</div><div className="count">{el.winner.num3}</div><div className="count">{el.winner.num4}</div>
-                </>
-              } )
+        return <>
+        <h1 className='text-center' style={{ textDecoration: "underline" }}>Winner {cw?.length>1? i+1:""}</h1>
+        <div className="count">{el.winner.num1}</div><div className="count">{el.winner.num2}</div><div className="count">{el.winner.num3}</div><div className="count">{el.winner.num4}</div>
+        </>
+      } )
     */}
 
 
     </div>
+    </>
   )
 }
 

@@ -15,10 +15,6 @@ import SlotCard from './SlotCard';
 
 
 
-function convertTZ( date, tzString ) {
-  return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
-}
-
 
 export default function Dashboard() {
 
@@ -40,12 +36,13 @@ export default function Dashboard() {
 
 
     
-  const slot1Date=convertTZ( ( moment().set( "hour", 11 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
-  const slot2Date=convertTZ( ( moment().set( "hour", 13 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
-  const slot3Date=convertTZ( ( moment().set( "hour", 16 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
-  const slot4Date=convertTZ( ( moment().set( "hour", 19 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
-  const slot5Date=convertTZ( ( moment().set( "hour", 22 ).set( "minute", 30 ) )._d, 'Asia/Kolkata' )
-
+  // const slot1Date= ( moment().set( "hour", 11 ).set( "minute", 30 ) )._d
+  const slot1Date= ( moment().set( "hour", 15 ).set( "minute", 24 ) )._d
+  console.log(slot1Date);
+  const slot2Date= ( moment().set( "hour", 13 ).set( "minute", 30 ) )._d
+  const slot3Date=( moment().set( "hour", 16 ).set( "minute", 30 ) )._d
+  const slot4Date=( moment().set( "hour", 19 ).set( "minute", 30 ) )._d
+  const slot5Date=( moment().set( "hour", 22 ).set( "minute", 30 ) )._d
 
 
 
@@ -332,7 +329,7 @@ export default function Dashboard() {
 <div className='w-50 my-4 mx-auto'>
 <Badge.Ribbon placement='start' color="#FF7E03" text="Slot 1" className=''>
         <Card data-aos="zoom-in-down" data-aos-duration="800" className='mx-auto' style={{ borderRadius: '7px' }}>
-        <Tag color="default" className='px-5 py-2' style={{marginLeft:'19rem'}}>{moment().format(`dddd, MMMM Do YYYY`)} 11:30 AM</Tag>
+        <Tag color="default" className='px-5 py-2' style={{marginLeft:'19rem'}}>{moment().format(`dddd, MMMM Do YYYY`)} 11:30 AM (PKT)</Tag>
 
   <h6 className='my-3'>Enter winner digits:</h6>
   <Form form={form1} name="horizontal_login" layout="inline" onFinish={onFinish1}>
@@ -451,7 +448,7 @@ export default function Dashboard() {
 
 
 
-  <SlotCard form={form2}  onFinish={onFinish2} slot='2' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  <SlotCard timeSlot={'1:30 PM (PKT)'} form={form2}  onFinish={onFinish2} slot='2' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
   
   
   
@@ -467,17 +464,17 @@ export default function Dashboard() {
   
   
 
-  <SlotCard form={form3}  onFinish={onFinish3}  slot='3' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  <SlotCard timeSlot={'4:30 PM (PKT)'} form={form3}  onFinish={onFinish3}  slot='3' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
   
   
   
   
   
   
-  <SlotCard form={form4}  onFinish={onFinish4}  slot='4' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  <SlotCard timeSlot={'7:30 PM (PKT)'} form={form4}  onFinish={onFinish4}  slot='4' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
 
 
-   <SlotCard form={form5}  onFinish={onFinish5}  slot='5' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+   <SlotCard timeSlot={'10:30 PM (PKT)'} form={form5}  onFinish={onFinish5}  slot='5' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
   
   
   

@@ -11,10 +11,14 @@ import Footer from './components/Footer'
 import Login from "./components/Login";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
+import { useEffect , useRef } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useState } from "react";
 import CounterResult from "./components/CounterResult";
+
+
+
+
 
 
 
@@ -23,22 +27,21 @@ function convertTZ( date, tzString ) {
   return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
 }
 function App() {
-  const [ currTime, setCurrTime ]=useState( new Date().toLocaleTimeString( [], { timeStyle: 'short' } ) )
+  const [ currTime, setCurrTime ]=useState( convertTZ(new Date(),'Asia/Kolkata').toLocaleTimeString( [], { timeStyle: 'short' }) )
 
   useEffect( () => {
     Aos.init( { duration: 2000, offset: 50, once: true } );
 
     setInterval( () => {
-
-      setCurrTime( new Date().toLocaleTimeString( [], { timeStyle: 'short' } ) );
+      const currentInd=convertTZ(new Date(),'Asia/Kolkata').toLocaleTimeString( [], { timeStyle: 'short' });
+      setCurrTime( currentInd) ;
 
     }, 2000 );
+    
 
   }, [] )
 
-  // const currTime=convertTZ(new Date()).toLocaleTimeString( [], { timeStyle: 'short' } );
-
-  const slot1=[ "12:35 AM", "12:36 AM", "12:37 AM", "12:38 AM", "12:39 AM", "12:40 AM" ]
+  const slot1=[ "4:58 PM", "4:59 PM"];
 
   return (
     <>
@@ -68,16 +71,18 @@ function App() {
       }/>
 
 
-        {console.log( currTime==='11:33 AM' )}
+        {console.log( currTime==='3:55 PM' )}
+        {console.log( currTime )}
 
 
 <Route exact path="/live" element={
   <>
             <Navbar />
             <Landing key="3" />
-            {slot1.includes( currTime )? <CounterResult />:<Video />}
-
-            {/* <Video /> */}
+            <CounterResult/>
+            {/* {slot1.includes( currTime )? <>
+           
+            <CounterResult /></>:<Video />} */}
   <Footer/>
   </>
 } />

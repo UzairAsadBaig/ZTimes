@@ -40,7 +40,7 @@ export default function DrawTable( props ) {
     return {
 
       key: i,
-      time: new Date( el.date ).toLocaleString(),
+      time: new Date( convertTZ(el.date,'Asia/Kolkata') ).toLocaleString(),
       draw: `1st: ( ${el.winners[ 0 ].num1}${el.winners[ 0 ].num2}${el.winners[ 0 ].num2}${el.winners[ 0 ].num4} )
 
       ${el.winners.length>1? `- 2nd: ( ${el.winners[ 1 ].num1}${el.winners[ 1 ].num2}${el.winners[ 1 ].num2}${el.winners[ 1 ].num4}, ${el.winners[ 2 ].num1}${el.winners[ 2 ].num2}${el.winners[ 2 ].num2}${el.winners[ 2 ].num4}, ${el.winners[ 3 ].num1}${el.winners[ 3 ].num2}${el.winners[ 3 ].num2}${el.winners[ 3 ].num4}, ${el.winners[ 4 ].num1}${el.winners[ 4 ].num2}${el.winners[ 4 ].num2}${el.winners[ 4 ].num4} )`:''}

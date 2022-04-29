@@ -37,7 +37,10 @@
   border-radius: 50%;
   width: 180px!important;
 }
+.welcome_draw{
 
+  font-size: 10rem;
+}
 
 .draw_results{
   background-color: black;

@@ -14,7 +14,7 @@ export default function SlotCard(props) {
     <div className='w-50 my-4 mx-auto'>
   <Badge.Ribbon placement='start' color="#FF7E03" text={`Slot ${props.slot}`}>
           <Card data-aos="zoom-in-down" data-aos-duration="800" className='mx-auto' style={{ borderRadius: '7px' }}>
-          <Tag color="default" className='px-5 py-2' style={{marginLeft:'19rem'}}>{moment().format(`dddd, MMMM Do YYYY`)} 10:30 PM</Tag>
+          <Tag color="default" className='px-5 py-2' style={{marginLeft:'19rem'}}>{moment().format(`dddd, MMMM Do YYYY`)} {props.timeSlot}</Tag>
   
     <h6 className='my-3'>Enter winner digits and time:</h6>
     <Form form={props.form} name="horizontal_login" onFinish={props.onFinish}>

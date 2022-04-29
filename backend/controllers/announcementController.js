@@ -64,22 +64,26 @@ exports.getTodaysWinners=catchAysnc(async (req,res,next)=>{
 } );
 
 
+function convertTZ( date, tzString ) {
+  return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
+}
+
+
 exports.sendWinner=catchAysnc( async ( req, res, next ) => {
 
 
-  let cd=new Date();
-  start=new Date( cd.getFullYear(), cd.getMonth(), cd.getDate() );
-  start=new Date( start.toUTCString() );
-
-
-
+  let cd=convertTZ(new Date(),'Asia/Kolkata');
+  cd = new Date(cd.setHours(0,0,0,0));
+  // start=new Date( cd.getFullYear(), cd.getMonth(), cd.getDate() );
+  start=new Date( cd.toUTCString() );
+  
   let end=new Date( start.getTime()+( 24*60*60*1000 ) );
   let TodayWinners=await Announcement.find( {
     $and: [ { date: { $gt: start } }, { date: { $lt: end } } ]
   } )
 
 
-  let currTime=new Date( cd.toUTCString() );
+  let currTime=new Date( new Date().toUTCString() );
   console.log( "=>>>", currTime );
 
   const result=TodayWinners.filter( el => el.date<=currTime&&el.endTime>currTime );
