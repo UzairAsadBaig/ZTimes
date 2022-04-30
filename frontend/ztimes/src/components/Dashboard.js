@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 import { Form, Input, Button , Tag} from 'antd';
 import { UserOutlined, LockOutlined ,NumberOutlined } from '@ant-design/icons';
 import { Card  , Badge } from 'antd';
@@ -17,11 +17,25 @@ import SlotCard from './SlotCard';
 
 
 export default function Dashboard() {
+  
 
-    const [createAnnouncement]=useCreateAnnouncementMutation();
+
+  // const [currTime, setCurrTime] = useState(Math.floor(new Date().getTime()/1000)*1000);
+  const [currTime, setCurrTime] = useState(new Date());
+
+  const [createAnnouncement]=useCreateAnnouncementMutation();
 
 
     const { Option } = Select;
+
+
+    useEffect( () => {
+      setInterval( () => {
+        setCurrTime(new Date()) ;
+      }, 30000 );
+      
+  
+    }, [] )
 
 
 
@@ -37,13 +51,26 @@ export default function Dashboard() {
 
     
   // const slot1Date= ( moment().set( "hour", 11 ).set( "minute", 30 ) )._d
-  const slot1Date= ( moment().set( "hour", 15 ).set( "minute", 24 ) )._d
-  console.log(slot1Date);
+  // const slot1Date= ( moment().set( "hour", 15 ).set( "minute", 24 ) )._d
+  const slot1Date = new Date(new Date().setHours(11,30,0,0))
   const slot2Date= ( moment().set( "hour", 13 ).set( "minute", 30 ) )._d
   const slot3Date=( moment().set( "hour", 16 ).set( "minute", 30 ) )._d
   const slot4Date=( moment().set( "hour", 19 ).set( "minute", 30 ) )._d
-  const slot5Date=( moment().set( "hour", 22 ).set( "minute", 30 ) )._d
+  const slot5Date=( moment().set( "hour", 22 ).set( "minute", 43) )._d
 
+  const preTime = 10*60*1000;
+
+
+  // console.log(slot1Date)
+
+  // console.log(new Date(currTime), "----" , new Date(slot1Date.getTime()))
+  
+
+
+  // console.log( Math.floor( slot5Date.getTime()-currTime )<preTime && Math.floor(( slot5Date.getTime()-currTime) )>(1*60*1000) ) 
+  console.log( new Date(slot5Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) <=currTime.toLocaleTimeString( [], { timeStyle: 'short' }) && currTime.toLocaleTimeString( [], { timeStyle: 'short' })<slot5Date.toLocaleTimeString( [], { timeStyle: 'short' }) ) 
+
+  console.log( new Date(slot5Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) ,currTime.toLocaleTimeString( [], { timeStyle: 'short' }),slot5Date.toLocaleTimeString( [], { timeStyle: 'short' }))
 
 
     const onFinish1 =async (values) => {
@@ -326,6 +353,10 @@ export default function Dashboard() {
 
 
 
+
+{ 
+new Date(slot1Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) <=currTime.toLocaleTimeString( [], { timeStyle: 'short' }) && currTime.toLocaleTimeString( [], { timeStyle: 'short' })<slot1Date.toLocaleTimeString( [], { timeStyle: 'short' }) ? 
+
 <div className='w-50 my-4 mx-auto'>
 <Badge.Ribbon placement='start' color="#FF7E03" text="Slot 1" className=''>
         <Card data-aos="zoom-in-down" data-aos-duration="800" className='mx-auto' style={{ borderRadius: '7px' }}>
@@ -444,11 +475,17 @@ export default function Dashboard() {
 
   </Card></Badge.Ribbon>
   </div>
+  :""
 
+}
 
+{
+new Date(slot2Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) <=currTime.toLocaleTimeString( [], { timeStyle: 'short' }) && currTime.toLocaleTimeString( [], { timeStyle: 'short' })<slot2Date.toLocaleTimeString( [], { timeStyle: 'short' })   ?
 
+<SlotCard timeSlot={'1:30 PM (PKT)'} form={form2}  onFinish={onFinish2} slot='2' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+  :""
+}
 
-  <SlotCard timeSlot={'1:30 PM (PKT)'} form={form2}  onFinish={onFinish2} slot='2' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
   
   
   
@@ -464,19 +501,31 @@ export default function Dashboard() {
   
   
 
-  <SlotCard timeSlot={'4:30 PM (PKT)'} form={form3}  onFinish={onFinish3}  slot='3' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
-  
-  
-  
-  
-  
-  
-  <SlotCard timeSlot={'7:30 PM (PKT)'} form={form4}  onFinish={onFinish4}  slot='4' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+{
+new Date(slot3Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) <=currTime.toLocaleTimeString( [], { timeStyle: 'short' }) && currTime.toLocaleTimeString( [], { timeStyle: 'short' })<slot3Date.toLocaleTimeString( [], { timeStyle: 'short' })   ?
 
+  <SlotCard timeSlot={'4:30 PM (PKT)'} form={form3}  onFinish={onFinish3}  slot='3' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+:""}
+  
+  
+  
+  
+  
+{
+  new Date(slot4Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) <=currTime.toLocaleTimeString( [], { timeStyle: 'short' }) && currTime.toLocaleTimeString( [], { timeStyle: 'short' })<slot4Date.toLocaleTimeString( [], { timeStyle: 'short' }) 
+   ?
+
+  <SlotCard timeSlot={'7:30 PM (PKT)'} form={form4}  onFinish={onFinish4}  slot='4' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
+:''}
+
+
+
+{
+   new Date(slot5Date.getTime()-preTime).toLocaleTimeString( [], { timeStyle: 'short' }) <=currTime.toLocaleTimeString( [], { timeStyle: 'short' }) && currTime.toLocaleTimeString( [], { timeStyle: 'short' })<slot5Date.toLocaleTimeString( [], { timeStyle: 'short' })  ?
 
    <SlotCard timeSlot={'10:30 PM (PKT)'} form={form5}  onFinish={onFinish5}  slot='5' digit1="digit1" digit2="digit2" digit3="digit3" digit4="digit4" digit5="digit5" digit6="digit6" digit7="digit7" digit8="digit8" digit9="digit9" digit10="digit10" digit11="digit11" digit12="digit12" digit13="digit13" digit14="digit14" digit15="digit15" digit16="digit16" digit17="digit17" digit18="digit18" digit19="digit19" digit20="digit20"  />
-  
-  
+:""  
+}
   
   
   
