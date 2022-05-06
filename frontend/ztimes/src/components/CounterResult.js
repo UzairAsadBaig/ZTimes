@@ -315,6 +315,7 @@ const CounterResult=() => {
     !isLoading&&isSuccess&&runSimulation( data.data[ 0 ].winners );
 
     setTimeout( () => {
+
       welcomeRef.current.style.display='none';
       counterRef.current.style.display='inline-flex';
       winnerRef.current.style.display='inline-flex';
@@ -368,7 +369,7 @@ const CounterResult=() => {
 
             {
 
-              data.data[ 0 ].winners.length===1? <><h1 className='text-center mt-3'>Winner 1</h1><div className="col-12"><Resultbox num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div></>
+              data.data[ 0 ]?.winners.length===1? <><h1 className='text-center mt-3'>Winner 1</h1><div className="col-12"><Resultbox num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div></>
 
                 :
 
