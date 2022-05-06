@@ -27,42 +27,44 @@ const CounterResult=() => {
       let si=setInterval( () => {
         setRandom( {
           num1: Math.floor( Math.random()*10 ),
-          num2: "-",
-          num3: "-",
-          num4: "-",
+          num2: Math.floor( Math.random()*10 ),
+          num3: Math.floor( Math.random()*10 ),
+          num4: Math.floor( Math.random()*10 ),
         } );
       }, 1 );
 
       //Setting the result in counter
       setTimeout( () => {
         clearInterval( si );
-        setRandom( {
-          num1: Nums[ 0 ],
-          num2: "-",
-          num3: "-",
-          num4: "-",
-        } );
-        return resolve( 1 )
-      }, 5000 );
+        let mi=setInterval( () => {
+          setRandom( {
+            num1: Nums[0],
+            num2: "-",
+            num3: "-",
+            num4: "-",
+          } );
+        }, 1 );
+        return resolve( mi )
+      }, 8000 );
 
-    } ).then( function ( result ) {
-
+    } ).then( function ( mi ) {
       //Setting the result in result box for first number
       setNums( ( n ) => { return { ...n, "num1": Nums[ 0 ] } } );
 
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 2000 );
+        setTimeout( () =>{
+          clearInterval( mi );
+          return resolve( 1 )}, 2000 );
       } );
 
     } ).then( function ( result ) {
-
       //Rolling the counter's Second number
       let si=setInterval( () => {
         setRandom( {
-          num1: "-",
+          num1:  Math.floor( Math.random()*10 ),
           num2: Math.floor( Math.random()*10 ),
-          num3: "-",
-          num4: "-",
+          num3:  Math.floor( Math.random()*10 ),
+          num4:  Math.floor( Math.random()*10 ),
         } );
       }, 1 );
 
@@ -71,23 +73,27 @@ const CounterResult=() => {
         //Setting the result in counter
         setTimeout( () => {
           clearInterval( si );
-          setRandom( {
-            num1: "-",
-            num2: Nums[ 1 ],
-            num3: "-",
-            num4: "-",
-          } );
-          return resolve( 1 )
+          let mi=setInterval( () => {
+            setRandom( {
+              num1: "-",
+              num2: Nums[1],
+              num3: "-",
+              num4: "-",
+            } );
+          }, 1 );
+          return resolve( mi )
         }, 5000 );
       } );
 
-    } ).then( function ( result ) { // (**)
+    } ).then( function ( mi ) { // (**)
 
 
       setNums( ( n ) => { return { ...n, "num2": Nums[ 1 ] } } );
 
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 2000 );
+        setTimeout( () =>{
+          clearInterval( mi );
+          return resolve( 1 )}, 2000 );
       } );
 
 
@@ -96,10 +102,10 @@ const CounterResult=() => {
       //Rolling the counter's third number
       let si=setInterval( () => {
         setRandom( {
-          num1: "-",
-          num2: "-",
+          num1:  Math.floor( Math.random()*10 ),
+          num2:  Math.floor( Math.random()*10 ),
           num3: Math.floor( Math.random()*10 ),
-          num4: "-",
+          num4:  Math.floor( Math.random()*10 ),
         } );
       }, 1 );
 
@@ -108,23 +114,27 @@ const CounterResult=() => {
         //Setting the result in counter
         setTimeout( () => {
           clearInterval( si );
-          setRandom( {
-            num1: "-",
-            num2: "-",
-            num3: Nums[ 2 ],
-            num4: "-",
-          } );
-          return resolve( 1 )
+          let mi=setInterval( () => {
+            setRandom( {
+              num1: "-",
+              num2: "-",
+              num3: Nums[2],
+              num4: "-",
+            } );
+          }, 1 );
+          return resolve( mi )
         }, 5000 );
       } );
 
     } )
-      .then( function ( result ) {
+      .then( function ( mi ) {
 
         setNums( ( n ) => { return { ...n, "num3": Nums[ 2 ] } } );
 
         return new Promise( ( resolve, reject ) => { // (*)
-          setTimeout( () => resolve( 1 ), 2000 );
+          setTimeout( () =>{
+            clearInterval( mi );
+            return resolve( 1 )}, 2000 );
         } );
 
       } ).then( function ( result ) {
@@ -132,9 +142,9 @@ const CounterResult=() => {
         //Rolling the counter's fourth number
         let si=setInterval( () => {
           setRandom( {
-            num1: "-",
-            num2: "-",
-            num3: "-",
+            num1:  Math.floor( Math.random()*10 ),
+            num2:  Math.floor( Math.random()*10 ),
+            num3: Math.floor( Math.random()*10 ),
             num4: Math.floor( Math.random()*10 ),
           } );
         }, 1 );
@@ -144,21 +154,23 @@ const CounterResult=() => {
           //Setting the result in counter
           setTimeout( () => {
             clearInterval( si );
-            setRandom( {
-              num1: "-",
-              num2: "-",
-              num3: "-",
-              num4: Nums[ 3 ],
-            } );
-            return resolve( 1 )
+            let mi=setInterval( () => {
+              setRandom( {
+                num1: "-",
+                num2: "-",
+                num3: "-",
+                num4: Nums[3],
+              } );
+            }, 1 );
+            return resolve( mi )
           }, 5000 );
         } );
 
       } )
-      .then( function ( result ) {
-
+      .then( function ( mi ) {
         setNums( ( n ) => { return { ...n, "num4": Nums[ 3 ] } } );
         setTimeout( () => {
+          clearInterval( mi );
           setRandom( {
             num1: "-",
             num2: "-",
@@ -189,25 +201,25 @@ const CounterResult=() => {
     } ).then( function ( result ) {
       announceWinner( setNums1, Nums1 );
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 30000 );
+        setTimeout( () => resolve( 1 ), 34000 );
       } );
 
     } ).then( function ( result ) {
       announceWinner( setNums2, Nums2 );
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 30000 );
+        setTimeout( () => resolve( 1 ), 34000 );
       } );
 
     } ).then( function ( result ) {
       announceWinner( setNums3, Nums3 );
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 30000 );
+        setTimeout( () => resolve( 1 ), 34000 );
       } );
 
     } ).then( function ( result ) {
       announceWinner( setNums4, Nums4 );
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 30000 );
+        setTimeout( () => resolve( 1 ), 34000 );
       } );
 
     } ).then( function ( result ) {
@@ -230,6 +242,7 @@ const CounterResult=() => {
 
   const welcomeRef=useRef( null );
   const counterRef=useRef( null );
+  const winnerRef=useRef( null );
 
 
   const [ random, setRandom ]=useState( {
@@ -304,6 +317,7 @@ const CounterResult=() => {
     setTimeout( () => {
       welcomeRef.current.style.display='none';
       counterRef.current.style.display='inline-flex';
+      winnerRef.current.style.display='inline-flex';
 
     }, 5000 );
 
@@ -321,7 +335,7 @@ const CounterResult=() => {
     
     
       {!isLoading&&<>
-        <div ref={counterRef} className="counter row justify-content-center" data-aos="zoom-in">
+        <div  ref={counterRef} style={{display:'none'}}  className="counter row justify-content-center" data-aos="zoom-in">
 
 
           <div className="count">{random.num1}</div>
@@ -346,7 +360,7 @@ const CounterResult=() => {
         </div>
 
 
-        <div>
+        <div ref={winnerRef} style={{display:'none'}}  >
 
           {/* <h1 className='text-center my-5'>Winners</h1> */}
 
