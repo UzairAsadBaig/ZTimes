@@ -43,3 +43,46 @@ video[poster] {
 
 
 } */
+.marquee_div {
+  position: relative;
+  top: -10rem;
+}
+
+.marquee_line {
+
+  /* background-color: white; */
+  z-index: 9999 !important;
+  color: white;
+  font-weight: bold;
+  width: 100vw;
+  font-size: 1.3rem;
+  letter-spacing: .05rem;
+  word-spacing: .2rem;
+  opacity: .7;
+}
+
+.vid_live_logo {
+  width: 8rem;
+  margin: 0;
+  position: relative;
+  top: 10rem;
+  left: 2rem;
+  z-index: 999 !important;
+}
+
+.live_clock {
+  position: relative;
+  top: 10rem;
+  float: right;
+  color: white;
+  z-index: 999 !important;
+  margin-right: 4rem;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  background-color: black;
+  border: 3px solid #FF7E03;
+  border-radius: 7px;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+
+
+}

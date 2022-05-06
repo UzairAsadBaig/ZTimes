@@ -25,6 +25,8 @@
     "react-animated-css": "^1.2.1",
     "react-announcement-ticker": "^1.0.1",
     "react-dom": "^18.0.0",
+    "react-live-clock": "^5.8.2",
+    "react-marquee-slider": "^1.1.5",
     "react-player": "^2.10.0",
     "react-redux": "^8.0.1",
     "react-router-dom": "^6.3.0",

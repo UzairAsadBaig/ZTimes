@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import './../css/Video.css'
-import ReactPlayer from "react-player";
-import NewsTicker from "react-advanced-news-ticker";
+import Marquee, { Motion, randomIntFromInterval } from "react-marquee-slider";
+import times from "lodash/times";
+import Clock from 'react-live-clock';
+
 
 export default function App() {
   // const [ videoFilePath, setVideoFilePath ]=useState( null );
@@ -23,12 +25,21 @@ export default function App() {
 
   return (
     <>
+      <div data-aos="zoom-in" >
+
+
+        <img src={require( '../img/logo-01.png' )} className='vid_live_logo' alt="" />
+        <Clock
+          // format={'HH:mm:ss'}
+          format={'hh:mm:ss a'}
+          ticking={true}
+          timezone={'Asia/Calcutta'} className='live_clock' />
+
       <div className="my-5">
 
 
-        <video id="my-video" data-aos="zoom-in" className="video-js vjs-theme-city vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-          <source src={require( './../video.mp4' )} type="video/mp4" />
-
+          <video id="my-video" className="video-js vjs-theme-city vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+            <source src={require( './../video.mp4' )} type="video/mp4" />
           <p className="vjs-no-js">
             To view this video please enable JavaScript, and consider upgrading to a
             web browser that
@@ -36,26 +47,29 @@ export default function App() {
 
 
         </video>
-        <NewsTicker
-          rowHeight={20}
-          maxRows={1}
-          speed={600}
-          duration={2000}
-          autoStart={true}
-          pauseOnHover={false}
-          id="myId"
-          className="myClassName1 myClassName2"
-        >
-          <div className="text-center">12:00 PM</div>
-          <div className="text-center">2:00 PM</div>
-          <div className="text-center">5:00 PM</div>
-          <div className="text-center">8:00 PM</div>
-          <div className="text-center">11:00 PM</div>
-        </NewsTicker>
+
+
+          <div>
+            <div style={{ height: 100 }} className="marquee_div">
+              <Marquee velocity={25}>
+                {times( 1, Number ).map( id => (
+
+
+                  <span className="marquee_line">The result will be drawn at 12:30 PM, 2:30 PM, 5:30 PM, 8:30 PM, 11:30 PM according to Indian Standard Time </span>
+
+
+                ) )}
+              </Marquee>
+            </div>
+
+            <div style={{ height: 0.7*60 }} />
+
+
+          </div>
 
 
 
-
+        </div>
 
       </div>
 
