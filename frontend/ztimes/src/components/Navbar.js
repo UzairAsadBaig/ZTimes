@@ -31,7 +31,6 @@ const Navbar=() => {
 
 
   return (
-    <Animated animationIn="fadeInDown" animationOut="fadeOut" isVisible={true}>
     <nav className="navbar navbar-expand-lg fixed-top">
 
       <div className="container">
@@ -65,7 +64,6 @@ const Navbar=() => {
         </div>
 
     </nav>
-    </Animated>
 
   )
 }

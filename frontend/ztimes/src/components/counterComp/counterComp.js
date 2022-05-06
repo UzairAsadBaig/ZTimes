@@ -4,6 +4,7 @@ import { DatePicker} from 'antd';
 import DrawTable from '../DrawTable';
 import { useGetHistoryMutation } from '../../redux/nodeAPI';
 import { defaultPrefixCls } from 'antd/lib/config-provider';
+import Resultbox from '../Resultbox';
 
 
 
@@ -102,6 +103,7 @@ export default function CounterComp() {
 
       {console.log( ">>>>>>>>", tableData )}
       <DrawTable tableData={tableData} />
+
     </div>
 
 

@@ -50,7 +50,7 @@ const announcementSchema=new mongoose.Schema( {
 //Todo: ********* Adding virtual properties ***********
 // *** Whatever return will be set to virtual property value
 announcementSchema.virtual( 'endTime' ).get( function () {
-  const min=2;
+  const min=20;
   let end=new Date( this.date.getTime()+( min*60*1000 ) );
   return end;
 } )
@@ -65,6 +65,7 @@ announcementSchema.virtual( 'endTime' ).get( function () {
 announcementSchema.pre( 'save', async function ( next ) {
   // HERE 'this' keyword === current document 
   next();
+
 } )
 
 
@@ -78,10 +79,10 @@ announcementSchema.pre( /^find/, async function ( next ) {
 } )
 
 
-// **** AGGREGATION MIDDLEWARE: runs before executing Agrregation pipepline
+// **** AGGREGATION MIDDLEWARE: runs before executing Agrregation pipeline
 announcementSchema.pre( 'aggregate', async function ( next ) {
-    // HERE 'this' keyword === aggregation Obj
-
+    // HERE 'this' keyword === aggregation obj
+// console.log("headline of the month")
 
 
   next();

@@ -41,7 +41,7 @@ function App() {
 
   }, [] )
 
-  const slot1=[ "4:58 PM", "4:59 PM"];
+  const slot1=[ "6:10 PM", "6:11 PM", "6:12 PM" ];
 
   return (
     <>
@@ -79,10 +79,10 @@ function App() {
   <>
             <Navbar />
             <Landing key="3" />
-            <CounterResult/>
-            {/* {slot1.includes( currTime )? <>
+            {/* <CounterResult/> */}
+            {slot1.includes( currTime )? <>
            
-            <CounterResult /></>:<Video />} */}
+              <CounterResult /></>:<Video />}
   <Footer/>
   </>
 } />

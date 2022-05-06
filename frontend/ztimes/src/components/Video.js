@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './../css/Video.css'
 import ReactPlayer from "react-player";
+import NewsTicker from "react-advanced-news-ticker";
 
 export default function App() {
   // const [ videoFilePath, setVideoFilePath ]=useState( null );
@@ -35,6 +36,26 @@ export default function App() {
 
 
         </video>
+        <NewsTicker
+          rowHeight={20}
+          maxRows={1}
+          speed={600}
+          duration={2000}
+          autoStart={true}
+          pauseOnHover={false}
+          id="myId"
+          className="myClassName1 myClassName2"
+        >
+          <div className="text-center">12:00 PM</div>
+          <div className="text-center">2:00 PM</div>
+          <div className="text-center">5:00 PM</div>
+          <div className="text-center">8:00 PM</div>
+          <div className="text-center">11:00 PM</div>
+        </NewsTicker>
+
+
+
+
 
       </div>
 
