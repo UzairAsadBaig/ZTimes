@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 import Login from "./components/Login";
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect , useRef } from "react";
+import { useEffect, useRef } from "react";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useState } from "react";
 import CounterResult from "./components/CounterResult";
@@ -27,17 +27,17 @@ function convertTZ( date, tzString ) {
   return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
 }
 function App() {
-  const [ currTime, setCurrTime ]=useState( convertTZ(new Date(),'Asia/Kolkata').toLocaleTimeString( [], { timeStyle: 'short' }) )
+  const [ currTime, setCurrTime ]=useState( convertTZ( new Date(), 'Asia/Kolkata' ).toLocaleTimeString( [], { timeStyle: 'short' } ) )
 
   useEffect( () => {
     Aos.init( { duration: 2000, offset: 50, once: true } );
 
     setInterval( () => {
-      const currentInd=convertTZ(new Date(),'Asia/Kolkata').toLocaleTimeString( [], { timeStyle: 'short' });
-      setCurrTime( currentInd) ;
+      const currentInd=convertTZ( new Date(), 'Asia/Kolkata' ).toLocaleTimeString( [], { timeStyle: 'short' } );
+      setCurrTime( currentInd );
 
     }, 2000 );
-    
+
 
   }, [] )
 
@@ -47,59 +47,59 @@ function App() {
     <>
       {/* <Navbar /> */}
       {/* <Landing /> */}
-    <Routes>
+      <Routes>
 
 
-<Route exact path="/" element={
+        <Route exact path="/" element={
           <>
             <Navbar />
             <Landing key="1" />
-      <MobileAPP />
+            <MobileAPP />
             {/* <CardComp /> */}
-            <Footer/>
-      </>
-      }/>
+            <Footer />
+          </>
+        } />
 
-<Route exact path="/draw" element={
-      <>
+        <Route exact path="/draw" element={
+          <>
             <Navbar />
             <Landing key="2" />
-<CounterComp />
-<Footer/>
+            <CounterComp />
+            <Footer />
 
-      </>
-      }/>
+          </>
+        } />
 
 
         {console.log( currTime==='3:55 PM' )}
         {console.log( currTime )}
 
 
-<Route exact path="/live" element={
-  <>
+        <Route exact path="/live" element={
+          <>
             <Navbar />
             <Landing key="3" />
             {/* <CounterResult/> */}
-            {!slot1.includes( currTime )? <>
-           
-              <CounterResult /></>:<Video />}
-  <Footer/>
-  </>
-} />
+            {slot1.includes( currTime )? <>
 
-<Route exact path="/dashboard" element={
-<Dashboard/>
-} />
-  
-  <Route exact path="/admin/login" element={<Login/>}/>
+              <CounterResult /></>:<Video />}
+            <Footer />
+          </>
+        } />
+
+        <Route exact path="/dashboard" element={
+          <Dashboard />
+        } />
+
+        <Route exact path="/admin/login" element={<Login />} />
 
         <Route exact path="/admin/dashboard" element={
           <ProtectedRoute>
-          <Dashboard />
+            <Dashboard />
           </ProtectedRoute>
         } />
 
-    </Routes>
+      </Routes>
 
     </>
   )

@@ -5,24 +5,11 @@ import times from "lodash/times";
 import Clock from 'react-live-clock';
 
 import ReactPlayer from "react-player";
+import MajVideo from "./MajVideo";
 
 export default function App() {
-  // const [ videoFilePath, setVideoFilePath ]=useState( null );
 
-  // const handleVideoUpload=( event ) => {
-  //   const [ file ]=event.target.files;
-  //   console.log( file );
-  //   setVideoFilePath( URL.createObjectURL( file ) );
-  //   console.log( URL.createObjectURL( file ) )
-  // };
-
-  // return (
-  //   <>
-  //     <input type="file" onChange={handleVideoUpload} />
-  //     <ReactPlayer url={videoFilePath} width="100%" height="100%" controls />
-  //   </>
-  // );
-
+  const playerRef=React.useRef( null );
 
   return (
     <>
@@ -36,18 +23,10 @@ export default function App() {
           ticking={true}
           timezone={'Asia/Calcutta'} className='live_clock' />
 
-      <div className="my-5">
+        <div className="VIDEO_COMP_PARENT">
 
+          <MajVideo />
 
-          <video id="my-video" className="video-js vjs-theme-city vjx-matrix" width="60%" height="267px" controls preload="none" poster="https://wallpaperaccess.com/full/329583.jpg" data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
-            <source src={require( './../video.mp4' )} type="video/mp4" />
-          <p className="vjs-no-js">
-            To view this video please enable JavaScript, and consider upgrading to a
-            web browser that
-          </p>
-
-
-        </video>
 
 
           <div>

@@ -25,31 +25,14 @@ video[poster] {
   width: 100% !important;
   height: auto !important;
 }
-/* #tickr-scroll li {
-  text-align: center !important;
-  background-color: #FF7E03 !important;
-  color: white !important;
-  outline: none !important;
-  border: none !important;
-}
 
-.tickr-title {
-  text-align: center;
-  display: none !important;
-  background: none !important;
-  border: none !important;
-  outline: none !important;
-  border: none !important;
-}
-
-#tickr-box {
-  max-width: 100% !important;
-
-
-} */
 .marquee_div {
   position: relative;
   top: -10rem;
+}
+
+.VIDEO_COMP_PARENT {
+  position: relative;
 }
 
 .marquee_line {
@@ -68,15 +51,15 @@ video[poster] {
 .vid_live_logo {
   width: 8rem;
   margin: 0;
-  position: relative;
-  top: 10rem;
+  position: absolute;
+  top: 5.5rem;
   left: 2rem;
   z-index: 999 !important;
 }
 
 .live_clock {
   position: relative;
-  top: 10rem;
+  top: 5rem;
   float: right;
   color: white;
   z-index: 999 !important;

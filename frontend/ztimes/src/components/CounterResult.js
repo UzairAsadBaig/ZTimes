@@ -1,8 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect , useCallback, useRef } from 'react'
 import './counterComp/counterComp.css';
 import { useGetWinnerQuery } from '../redux/nodeAPI';
-import { useRef } from 'react';
 import Resultbox from './Resultbox';
+import { countDown } from './ModelWinner';
+import ReactCanvasConfetti from "react-canvas-confetti";
+
+
+
+const canvasStyles = {
+  position: "fixed",
+  pointerEvents: "none",
+  width: "100%",
+  height: "100%",
+  top: 0,
+  left: 0
+};
 
 
 
@@ -18,6 +30,52 @@ const CounterResult=() => {
   const [ nums3, setNums3 ]=useState( { num1: null, num2: null, num3: null, num4: null } );
   const [ nums4, setNums4 ]=useState( { num1: null, num2: null, num3: null, num4: null } );
   const [ nums5, setNums5 ]=useState( { num1: null, num2: null, num3: null, num4: null } );
+
+
+  const refAnimationInstance = useRef(null);
+
+  const getInstance = useCallback((instance) => {
+    refAnimationInstance.current = instance;
+  }, []);
+
+  const makeShot = useCallback((particleRatio, opts) => {
+    refAnimationInstance.current &&
+      refAnimationInstance.current({
+        ...opts,
+        origin: { y: 0.7 },
+        particleCount: Math.floor(200 * particleRatio)
+      });
+  }, []);
+
+  const fire = useCallback(() => {
+    makeShot(0.25, {
+      spread: 26,
+      startVelocity: 55
+    });
+
+    makeShot(0.2, {
+      spread: 60
+    });
+
+    makeShot(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8
+    });
+
+    makeShot(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    });
+
+    makeShot(0.1, {
+      spread: 120,
+      startVelocity: 45
+    });
+  }, [makeShot]);
+
 
   const announceWinner=( setNums, Nums ) => {
 
@@ -81,6 +139,7 @@ const CounterResult=() => {
               num4: "-",
             } );
           }, 1 );
+
           return resolve( mi )
         }, 5000 );
       } );
@@ -169,6 +228,8 @@ const CounterResult=() => {
       } )
       .then( function ( mi ) {
         setNums( ( n ) => { return { ...n, "num4": Nums[ 3 ] } } );
+        countDown(Nums);
+        fire();
         setTimeout( () => {
           clearInterval( mi );
           setRandom( {
@@ -177,7 +238,7 @@ const CounterResult=() => {
             num3: "-",
             num4: "-",
           } );
-        }, 2000 );
+        }, 5000 );
 
       } );
 
@@ -219,7 +280,7 @@ const CounterResult=() => {
     } ).then( function ( result ) {
       announceWinner( setNums4, Nums4 );
       return new Promise( ( resolve, reject ) => { // (*)
-        setTimeout( () => resolve( 1 ), 34000 );
+        setTimeout( () => resolve( 1 ), 40000 );
       } );
 
     } ).then( function ( result ) {
@@ -315,6 +376,7 @@ const CounterResult=() => {
     !isLoading&&isSuccess&&runSimulation( data.data[ 0 ].winners );
 
     setTimeout( () => {
+
       welcomeRef.current.style.display='none';
       counterRef.current.style.display='inline-flex';
       winnerRef.current.style.display='inline-flex';
@@ -335,6 +397,8 @@ const CounterResult=() => {
     
     
       {!isLoading&&<>
+        <ReactCanvasConfetti refConfetti={getInstance} style={canvasStyles} />
+        
         <div  ref={counterRef} style={{display:'none'}}  className="counter row justify-content-center" data-aos="zoom-in">
 
 
@@ -368,7 +432,7 @@ const CounterResult=() => {
 
             {
 
-              data.data[ 0 ].winners.length===1? <><h1 className='text-center mt-3'>Winner 1</h1><div className="col-12"><Resultbox num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div></>
+              data.data[ 0 ]?.winners.length===1? <><h1 className='text-center mt-3'>Winner 1</h1><div className="col-12"><Resultbox num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div></>
 
                 :
 

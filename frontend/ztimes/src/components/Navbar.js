@@ -52,9 +52,6 @@ const Navbar=() => {
                 <Link className={`nav-link nav_links fw-bold ${location.pathname.endsWith( "draw" )? "nav_active":''}`} to="/draw">DRAW</Link>
             </li>
 
-            <li className="nav-item">
-                <a className="nav-link nav_links fw-bold disabled" href="/">CONTACT</a>
-            </li>
 
 
           </ul>
