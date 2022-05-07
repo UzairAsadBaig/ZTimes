@@ -83,28 +83,24 @@ export default function CounterComp() {
 
 
   return ( <>
-    <div>
-      <div className="container counter_container my-5">
-        <div className="row">
-          {/* <div className="col-3 announce_time">
-            <p className='announce_time_text' data-aos="slide-right">Draw stop time</p>
-            <p className="stop_time" data-aos="slide-right">{cw?.length>0? cw[ 0 ]?.date.toLocaleTimeString( [], { timeStyle: 'short' } ):defaultStartingTime+"*"}</p>
-          </div> */}
-        </div>
+    <>
+      <div className="container counter_container">
+
 
         <div className="draw_results">
           <p className="draw_result_text" data-aos="zoom-in">
             All draw results
           </p>
-          <RangePicker className='RangePicker' placeholder={[ 'SELECT START DATE', 'SELECT END DATE' ]} onChange={onChange} style={{ height: "3.5rem", width: "37rem", marginBottom: '3rem', marginTop: '2rem', backgroundColor: '#ff7e03', color: 'white', outline: 'none', border: 'none' }} />
+          <RangePicker className='RangePicker' placeholder={[ 'SELECT START DATE', 'SELECT END DATE' ]} onChange={onChange} style={{  marginBottom: '3rem', marginTop: '2rem', backgroundColor: '#ff7e03', color: 'white', outline: 'none', border: 'none' }} />
         </div>
+
+
       </div>
 
 
-      {console.log( ">>>>>>>>", tableData )}
       <DrawTable tableData={tableData} />
 
-    </div>
+    </>
 
 
 

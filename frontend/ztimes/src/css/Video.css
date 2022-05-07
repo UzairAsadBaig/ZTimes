@@ -16,6 +16,10 @@ video[poster] {
   object-fit: fill;
 }
 
+.video{
+  /* margin-top: 1rem; */
+  /* margin-bottom: 1rem; */
+}
 .video-js {
   position: relative !important;
   width: 100% !important;
@@ -86,3 +90,39 @@ video[poster] {
 
 
 }
+
+
+
+/* media query */
+@media (min-width: 300px) and (max-width: 500px) { 
+
+  body{
+    overflow-x: hidden !important;
+}
+
+  .video{
+    margin-top: 7rem !important;
+  }
+  .vid_live_logo{
+    width: 4rem;
+    top: 6rem;
+  }
+  .live_clock{
+    top: 5rem;
+    font-size: 12px;
+    margin-right: 1rem;
+    padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+
+  }
+  .marquee_line {
+    font-size: 15px;
+  }
+  .marquee_div{
+    top: -5rem;
+  }
+
+  
+
+
+
+ }

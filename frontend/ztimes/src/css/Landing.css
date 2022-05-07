@@ -54,3 +54,22 @@
   padding-left: 2rem !important;
   padding-right: 2rem !important;
 }
+
+
+
+
+/* media query */
+@media (min-width: 300px) and (max-width: 500px) { 
+  .left_sec{
+    display: none;
+  }
+  .right_sec{
+    display: none;
+  }
+  body{
+    overflow-x: hidden !important;
+}
+
+
+
+ }

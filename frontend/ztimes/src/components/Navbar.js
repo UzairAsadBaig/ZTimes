@@ -31,7 +31,7 @@ const Navbar=() => {
 
 
   return (
-    <nav className="navbar navbar-expand-lg fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-light fixed-top">
 
       <div className="container">
         <a className="navbar-brand text-black" href="/"><img style={{width:'6rem',height:'3rem'}} src={require( './../img/logo-01.png' )} alt="" /></a>

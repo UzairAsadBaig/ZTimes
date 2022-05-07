@@ -26,3 +26,20 @@
   background-color: #FF7E03 !important;
   width: 80%;
 }
+
+
+/* media query */
+@media (min-width: 300px) and (max-width: 500px) {
+  body{
+    overflow-x: hidden !important;
+  }
+  #mobile_app_sec{
+    display: none;
+  }
+  .live__tv__div{
+    margin-top: 15rem !important;
+  }
+  .results__div{
+    margin-top: 4rem !important;
+  }
+ }

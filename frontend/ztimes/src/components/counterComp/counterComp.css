@@ -2,10 +2,16 @@
   margin-right: 0!important;
   padding: 0!important;
   margin-left: 0!important;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
 }
 .announce_time{
   padding: 0;
  
+}
+.RangePicker{
+  height: 3.5rem;
+  width: 37rem;
 }
 .announce_time .announce_time_text{
   font-size: 1.5rem;
@@ -53,3 +59,29 @@
 .draw_result_text{
   font-size: 2.5rem;
 }
+
+
+/* media queries */
+@media (min-width: 300px) and (max-width: 500px) { 
+ 
+  body{
+      overflow-x: hidden !important;
+  }
+  .draw_results{
+    width: 100vw !important;
+  }
+
+  .RangePicker{
+    width: 18rem;
+    height: 3rem;
+  }
+  .ant-picker-dropdown-range {
+    width: 50% !important;
+  }
+  .welcome_draw{
+    font-size: 14px;
+  }
+  
+
+
+ }

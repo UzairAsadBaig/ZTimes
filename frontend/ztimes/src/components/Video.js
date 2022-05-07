@@ -4,6 +4,7 @@ import Marquee, { Motion, randomIntFromInterval } from "react-marquee-slider";
 import times from "lodash/times";
 import Clock from 'react-live-clock';
 
+import ReactPlayer from "react-player";
 
 export default function App() {
   // const [ videoFilePath, setVideoFilePath ]=useState( null );
@@ -25,7 +26,7 @@ export default function App() {
 
   return (
     <>
-      <div data-aos="zoom-in" >
+      <div data-aos="zoom-in video" >
 
 
         <img src={require( '../img/logo-01.png' )} className='vid_live_logo' alt="" />

@@ -9,6 +9,8 @@ const MobileAPP=() => {
   return (
 
     <>
+    <div className='mobile__app'>
+
       <div className="mt-5" id="mobile_app_sec">
 
       <div className="row">
@@ -39,19 +41,21 @@ const MobileAPP=() => {
 
       <div className='row my-3'>
 
-        <div className="col-md-6 text-end pe-5">
+        <div className="col-md-6 text-center text-sm-end pe-sm-5 live__tv__div">
           <Link to="/live">
           <button className='btn live_tv_btn' data-aos="fade">LIVE TV</button>
           </Link>
         </div>
 
-        <div className="col-md-6 ps-5">
+        <div className="col-md-6 text-center ps-sm-5 results__div">
           <Link to="/draw">
-          <button className='btn draw_btn' data-aos="fade" >DRAW</button>
+          <button className='btn draw_btn' data-aos="fade" >Results</button>
           </Link>
         </div>
 
       </div>
+      </div>
+
 
     </>
 

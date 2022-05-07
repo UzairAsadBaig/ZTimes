@@ -41,7 +41,7 @@ function App() {
 
   }, [] )
 
-  const slot1=[ "6:10 PM", "6:11 PM", "6:12 PM" ];
+  const slot1=[ "3:11 AM", "3:12 AM", "3:13 AM" ];
 
   return (
     <>
