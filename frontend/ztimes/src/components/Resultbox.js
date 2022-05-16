@@ -11,10 +11,10 @@ const Resultbox=( props ) => {
 
   // console.log( "---->", num1 )
   const buttons=[
-    <Button key="one" disabled>{num1===null? "-":num1}</Button>,
-    <Button key="two" disabled>{num2===null? "-":num2}</Button>,
-    <Button key="three" disabled>{num3===null? "-":num3}</Button>,
-    <Button key="four" disabled>{num4===null? "-":num4}</Button>,
+    <Button key="one" class="single_box" disabled>{num1===null? "-":num1}</Button>,
+    <Button key="two" class="single_box" disabled>{num2===null? "-":num2}</Button>,
+    <Button key="three" class="single_box" disabled>{num3===null? "-":num3}</Button>,
+    <Button key="four" class="single_box" disabled>{num4===null? "-":num4}</Button>,
   ];
 
 
@@ -23,7 +23,7 @@ const Resultbox=( props ) => {
     <>
 
       {/* <span className='my-4 fw-bold'>{label} :</span> */}
-      <ButtonGroup size="large" className="ps-2 my-4" aria-label="large button group">
+      <ButtonGroup size="large" className="my-4 main_btn_box" aria-label="large button group">
         {buttons}
       </ButtonGroup>
 
