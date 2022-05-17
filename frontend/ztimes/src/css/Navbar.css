@@ -13,3 +13,11 @@
   background-color: #ff7d03e6;
   opacity: 1;
 }
+
+
+/* media query */
+@media (min-width: 300px) and (max-width: 500px) {
+  .navbar__bg{
+    background-color: #ff7d03e6;
+  }
+}

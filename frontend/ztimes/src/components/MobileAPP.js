@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './../css/Mobile.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const MobileAPP=() => {
 
@@ -43,12 +43,18 @@ const MobileAPP=() => {
 
         <div className="col-md-6 text-center text-sm-end pe-sm-5 live__tv__div">
           <Link to="/live">
+            <div className='icon__1'>
+              <img src={require('./../tv.png')} alt="" />
+            </div>
           <button className='btn live_tv_btn' data-aos="fade">LIVE TV</button>
           </Link>
         </div>
 
         <div className="col-md-6 text-center ps-sm-5 results__div">
           <Link to="/draw">
+            <div className='icon__2'>
+              <img style={{width:"7.5rem"}} src={require('./../lowin.png')} alt="" />
+            </div>
           <button className='btn draw_btn' data-aos="fade" >Results</button>
           </Link>
         </div>

@@ -413,10 +413,10 @@ const CounterResult=() => {
 
           </div> */}
 
-          <div className="count">{random.num1}</div>
-          <div className="count">{random.num2}</div>
-          <div className="count">{random.num3}</div>
-          <div className="count">{random.num4}</div>
+          <div className="count col-3">{random.num1}</div>
+          <div className="count col-3">{random.num2}</div>
+          <div className="count col-3">{random.num3}</div>
+          <div className="count col-3">{random.num4}</div>
 
 
 
@@ -451,10 +451,10 @@ const CounterResult=() => {
                   <h1 className='text-center mt-5 winner_heading'>1st Winner</h1>
                   <div className="col-12" key="1"><Resultbox label="Winner 1" num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div>
                   <h1 className='text-center mt-5 winner_heading'>2nd Winner</h1>
-                  <div className="col-3" key="2"><Resultbox label="Winner 2" num1={nums2.num1} num2={nums2.num2} num3={nums2.num3} num4={nums2.num4} /></div>
-                  <div className="col-3" key="3"><Resultbox label="Winner 3" num1={nums3.num1} num2={nums3.num2} num3={nums3.num3} num4={nums3.num4} /></div>
-                  <div className="col-3" key="4"><Resultbox label="Winner 4" num1={nums4.num1} num2={nums4.num2} num3={nums4.num3} num4={nums4.num4} /></div>
-                  <div className="col-3" key="5"><Resultbox label="Winner 5" num1={nums5.num1} num2={nums5.num2} num3={nums5.num3} num4={nums5.num4} /></div>
+                  <div className="col-md-3 col-12" key="2"><Resultbox label="Winner 2" num1={nums2.num1} num2={nums2.num2} num3={nums2.num3} num4={nums2.num4} /></div>
+                  <div className="col-md-3 col-12" key="3"><Resultbox label="Winner 3" num1={nums3.num1} num2={nums3.num2} num3={nums3.num3} num4={nums3.num4} /></div>
+                  <div className="col-md-3 col-12" key="4"><Resultbox label="Winner 4" num1={nums4.num1} num2={nums4.num2} num3={nums4.num3} num4={nums4.num4} /></div>
+                  <div className="col-md-3 col-12" key="5"><Resultbox label="Winner 5" num1={nums5.num1} num2={nums5.num2} num3={nums5.num3} num4={nums5.num4} /></div>
                 </>
 
             }

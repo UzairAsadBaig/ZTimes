@@ -95,10 +95,10 @@ export default function CounterComp() {
         </div>
 
 
-      </div>
 
 
       <DrawTable tableData={tableData} />
+      </div>
 
     </>
 

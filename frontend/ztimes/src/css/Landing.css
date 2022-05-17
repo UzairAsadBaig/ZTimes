@@ -61,9 +61,17 @@
 /* media query */
 @media (min-width: 300px) and (max-width: 500px) { 
   .left_sec{
-    display: none;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .right_sec{
+    display: none;
+  }
+  .watch_btn{
+    display: none;
+  }
+  .landing_para{
     display: none;
   }
   body{

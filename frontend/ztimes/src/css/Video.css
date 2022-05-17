@@ -85,23 +85,24 @@ video[poster] {
 
   .video{
     margin-top: 7rem !important;
+    margin-bottom: -7rem !important;
   }
   .vid_live_logo{
-    width: 4rem;
-    top: 6rem;
+    width: 3rem;
+    top: 3.7rem;
   }
   .live_clock{
-    top: 5rem;
-    font-size: 12px;
+    top: 2.3rem;
+    font-size: 10px;
     margin-right: 1rem;
     padding: 0.2rem 0.6rem 0.2rem 0.6rem;
 
   }
   .marquee_line {
-    font-size: 15px;
+    font-size: 12px;
   }
   .marquee_div{
-    top: -5rem;
+    top: -4rem;
   }
 
   

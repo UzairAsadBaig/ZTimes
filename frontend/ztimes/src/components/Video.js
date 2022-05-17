@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <>
-      <div data-aos="zoom-in video" >
+      <div data-aos="zoom-in video" className="video" >
 
 
         <img src={require( '../img/logo-01.png' )} className='vid_live_logo' alt="" />

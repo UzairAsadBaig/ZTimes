@@ -26,6 +26,9 @@
   background-color: #FF7E03 !important;
   width: 80%;
 }
+.icon__1 , .icon__2{
+  display: none;
+}
 
 
 /* media query */
@@ -37,9 +40,13 @@
     display: none;
   }
   .live__tv__div{
-    margin-top: 15rem !important;
+    margin-top: 7rem !important;
   }
   .results__div{
     margin-top: 4rem !important;
   }
+  .icon__1 , .icon__2{
+    display: block;
+  }
+
  }

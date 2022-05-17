@@ -12,7 +12,7 @@ export default function Footer() {
           <h4 className='text-white text-center ztime' data-aos="fade">
                 ZEETIME
             </h4>
-          <p className='text-white pt-4 ztime_text' data-aos="fade">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley, and more recen</p>
+          <p className='text-white pt-4 ztime_text' data-aos="fade">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div className='col-sm-6 p-4' >
     

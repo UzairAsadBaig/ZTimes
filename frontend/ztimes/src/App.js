@@ -28,7 +28,6 @@ function convertTZ( date, tzString ) {
 }
 function App() {
   const [ currTime, setCurrTime ]=useState( convertTZ( new Date(), 'Asia/Kolkata' ).toLocaleTimeString( [], { timeStyle: 'short' } ) )
-
   useEffect( () => {
     Aos.init( { duration: 2000, offset: 50, once: true } );
 
@@ -41,7 +40,7 @@ function App() {
 
   }, [] )
 
-  const slot1=[ "1:59 AM", "2:00 AM", "2:01 AM", "1:42 AM", "8:08 PM" ];
+  const slot1=[ "4:30 PM", "4:31 PM", "4:32 PM", "4:33 PM", "4:34 PM" ];
 
   return (
     <>
@@ -80,7 +79,7 @@ function App() {
             <Navbar />
             <Landing key="3" />
             {/* <CounterResult/> */}
-            {slot1.includes( currTime )? <>
+            {slot1.includes( currTime)? <>
 
               <CounterResult /></>:<Video />}
             <Footer />

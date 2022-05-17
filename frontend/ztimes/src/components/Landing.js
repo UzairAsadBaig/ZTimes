@@ -12,7 +12,7 @@ const Landing=() => {
     <div className="row">
 
 
-      <div className="col-md-6">
+      <div className="col-md-6 col-12">
         <Animated animationIn="fadeInLeft" animationOut="fadeOut" isVisible={true}>
         <div className="left_sec">
           <h1 className='landing_heading'>LIVE TV</h1>
@@ -27,7 +27,7 @@ const Landing=() => {
 
 
 
-      <div className="col-md-6 right_sec">
+      <div className="col-md-6 col-12 right_sec">
 
         <div className="corporate_img text-center">
           <Animated animationIn="fadeInRight" animationOut="fadeOut" isVisible={true}>
