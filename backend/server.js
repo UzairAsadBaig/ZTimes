@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const mongoose=require( "mongoose" );
 const dotenv=require( "dotenv" );
-
+const express=require( "express" )
 
 //! Listener to be called when any uncaught error(programming error) occurs
 process.on( "uncaughtException", ( err ) => {
@@ -33,6 +33,18 @@ const server=app.listen( process.env.PORT, () => {
     console.log( "Starting the server at 127.0.0.1:"+process.env.PORT );
 } );
 
+app.use( express.static( "client/build" ) );
+app.set( 'view engine', 'html' );
+
+
+const path=require( "path" );
+
+app.get( "*", ( req, res ) => {
+
+    res.sendFile( path.resolve( __dirname, 'client', 'build', 'index.html' ) );
+
+
+} )
 //! Listener to be called when any unhandle rejected promise occurs
 process.on( "unhandledRejection", ( err ) => {
     console.error( `${err.name} ${err.message}` );
