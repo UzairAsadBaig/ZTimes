@@ -14,10 +14,10 @@ button[disabled] {
   /* border */
 }
 .single_box {
-  font-size: 2.6rem !important;
+  font-size: 2rem !important;
   font-weight: 600;
-  padding-left: 1.6rem !important;
-  padding-right: 1.6rem !important;
+  padding-left: 1.2rem !important;
+  padding-right: 1.2rem !important;
 }
 
 .main_btn_box {
@@ -27,3 +27,16 @@ button[disabled] {
 
 
 
+
+/* media queries */
+@media (min-width: 300px) and (max-width: 500px) {
+
+  body {
+    overflow-x: hidden !important;
+  }
+  .single_box{
+    font-size: 1.2rem !important;
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+  }
+}

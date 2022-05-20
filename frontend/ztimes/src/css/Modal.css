@@ -1,0 +1,14 @@
+.ant-modal{
+    width: 1400px !important;
+    text-align: center !important;
+    height: 100vh !important;
+}
+.anticon-check-circle{
+    display: none !important;
+}
+.ant-modal-confirm-body .ant-modal-confirm-content{
+    margin-left: 0 !important;
+}
+.ant-modal-confirm-title .ant-modal-confirm-content{
+    font-size: 20rem !important;
+}

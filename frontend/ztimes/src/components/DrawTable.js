@@ -18,7 +18,7 @@ export default function DrawTable( props ) {
       title: 'Date and time',
       dataIndex: 'time',
       key: 'time',
-      width: 50,
+      width: 10,
       align: 'center'
 
     },
@@ -28,13 +28,12 @@ export default function DrawTable( props ) {
       title: 'Draw',
       dataIndex: 'draw',
       key: 'draw',
+      width: 90,
       align: 'center',
-      width: 50,
     },
   ];
 
 
-  console.log( props.tableData&&props.tableData )
 
   const data=props.tableData? props.tableData.map( ( el, i ) => {
 
@@ -57,8 +56,8 @@ export default function DrawTable( props ) {
 
     <>
 
-      <div className='p-5' data-aos="zoom-in-right">
-        <Table className='my-5' dataSource={data} columns={columns} pagination={false} >
+      <div data-aos="zoom-in-right" >
+        <Table className='my-5 ms-3 me-3' dataSource={data} columns={columns} pagination={false} >
         </Table>
       </div>
 

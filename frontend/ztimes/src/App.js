@@ -3,7 +3,6 @@ import Landing from "./components/Landing";
 import MobileAPP from "./components/MobileAPP";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
-import CardComp from './components/cardComponent/cardComp';
 import CounterComp from './components/counterComp/counterComp';
 import 'antd/dist/antd.css';
 import Video from "./components/Video";
@@ -40,7 +39,7 @@ function App() {
 
   }, [] )
 
-  const slot1=[ "4:30 PM", "4:31 PM", "4:32 PM", "4:33 PM", "4:34 PM" ];
+  const slot1=[ "3:05 PM", "3:06 PM", "3:07 PM", "3:08 PM", "3:09 PM" ];
 
   return (
     <>
@@ -79,7 +78,7 @@ function App() {
             <Navbar />
             <Landing key="3" />
             {/* <CounterResult/> */}
-            {slot1.includes( currTime)? <>
+            {!slot1.includes( currTime)? <>
 
               <CounterResult /></>:<Video />}
             <Footer />

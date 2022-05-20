@@ -96,9 +96,10 @@ export default function CounterComp() {
 
 
 
+   
 
-      <DrawTable tableData={tableData} />
       </div>
+      <DrawTable  tableData={tableData} />
 
     </>
 

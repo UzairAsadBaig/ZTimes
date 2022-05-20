@@ -1,6 +1,7 @@
 body {
   margin: 0;
 font-family: 'Oswald' !important;
+/* background-color: rgb(0, 0, 0) !important; */
 }
 
 #root{
