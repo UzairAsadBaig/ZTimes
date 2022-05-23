@@ -78,7 +78,7 @@ function App() {
             <Navbar />
             <Landing key="3" />
             {/* <CounterResult/> */}
-            {!slot1.includes( currTime)? <>
+            {slot1.includes( currTime)? <>
 
               <CounterResult /></>:<Video />}
             <Footer />
