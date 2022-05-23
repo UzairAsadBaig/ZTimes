@@ -8,11 +8,11 @@ export default function Footer() {
   return (
     <footer className='footer'>
     <div className='row mt-5' style={{backgroundColor:'#FF7E03'}}>
-        <div className='col-sm-6 p-4 '>
+        <div className='col-sm-6 p-4'>
           <h4 className='text-white text-center ztime' data-aos="fade">
                 ZEETIME
             </h4>
-          <p className='text-white pt-4 ztime_text' data-aos="fade">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+          <p className='text-white pt-4 ztime_text text-center' data-aos="fade">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
         </div>
         <div className='col-sm-6 p-4' >
     

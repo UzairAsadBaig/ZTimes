@@ -4,12 +4,22 @@ import $ from "jquery";
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom'
 import { Animated } from "react-animated-css";
-
+import Player from './Music';
+import Speech from 'react-speech';
+import music from './../TYCLUF5-countdown.mp3';
+import { useRef } from 'react';
 
 
 const Navbar=() => {
   const location=useLocation();
+  const audio = new Audio(music);
 
+  const start = ()=>{
+    console.log('audio starting!------------------',audio)
+    audio.play();
+  }
+
+  const playRef= useRef(null)
   const changeNavbar=() => {
     $( document ).ready( function () {
       $( window ).scroll( function () {
@@ -25,6 +35,9 @@ const Navbar=() => {
 
   useEffect( () => {
     changeNavbar();
+//     setTimeout(() => {
+// start()
+//     }, 7000);
   }, [] );
 
 
@@ -51,13 +64,11 @@ const Navbar=() => {
 
             <li className="nav-item">
                 <Link className={`nav-link nav_links fw-bold ${location.pathname.endsWith( "draw" )? "nav_active":''}`} to="/draw">DRAW</Link>
-            </li>
-
-
-
+            </li> 
+            {/* <li className='nav-item'>
+              <button ref={playRef} onClick={start}>play</button>
+            </li> */}
           </ul>
-
-
         </div>
         </div>
 

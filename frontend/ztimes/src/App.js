@@ -3,7 +3,6 @@ import Landing from "./components/Landing";
 import MobileAPP from "./components/MobileAPP";
 import Navbar from "./components/Navbar";
 import Dashboard from "./components/Dashboard";
-import CardComp from './components/cardComponent/cardComp';
 import CounterComp from './components/counterComp/counterComp';
 import 'antd/dist/antd.css';
 import Video from "./components/Video";
@@ -40,7 +39,7 @@ function App() {
 
   }, [] )
 
-  const slot1=[ "4:38 PM", "4:39 PM", "4:40 PM", "4:41 PM", "5:13 PM" ];
+  const slot1=[ "3:05 PM", "3:06 PM", "3:07 PM", "3:08 PM", "3:09 PM" ];
 
   return (
     <>

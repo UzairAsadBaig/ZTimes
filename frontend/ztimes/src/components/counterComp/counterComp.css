@@ -35,22 +35,22 @@
 .counter {
   text-align: center;
   /* margin-top: 7rem; */
-  margin-bottom: 6rem;
+  /* margin-bottom: 2rem; */
   width: 100vw !important;
 }
 
 .count {
-  padding: 0rem 3rem;
+  padding: 0rem 2rem;
   margin: .5rem;
   margin-top: 5rem !important;
-  font-size: 7rem;
+  font-size: 4rem;
   border: 1px solid rgba(0, 0, 0, 0.57);
   color: white;
   background-color: #ff7e03;
   font-weight: 600;
   border-radius: 50%;
-  width: 180px !important;
-  height: 180px;
+  width: 100px !important;
+  height: 100px;
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
@@ -61,6 +61,7 @@
 
   margin-top: 20rem;
   margin-bottom: 25rem;
+  top: 25rem;
   font-size: 10rem;
   text-shadow: 0 1px 0 #ccc,
     0 2px 0 #c9c9c9,
@@ -75,6 +76,8 @@
     0 10px 10px rgba(0, 0, 0, .2),
     0 20px 20px rgba(0, 0, 0, .15);
 }
+
+
 
 .draw_results {
   background-color: black;
@@ -101,13 +104,13 @@
 }
 
 .ant-modal-confirm-body .ant-modal-confirm-title {
-  font-size: 1.5rem !important;
+  font-size: 3rem !important;
   /* text-decoration: underline !important; */
 
 }
 
 .ant-modal-confirm-body .ant-modal-confirm-content {
-  font-size: 1.2rem !important;
+  font-size: 2.5rem !important;
   font-weight: 600;
   margin-left: 3rem !important;
 }
@@ -118,7 +121,6 @@
   text-shadow: 4px 3px 0px #fff,
     9px 8px 0px rgba(0, 0, 0, 0.15);
 }
-
 
 
 /* .live_logo_display {
@@ -163,11 +165,11 @@
     margin-top: 4.6rem;
   }
   .count{
-    width: 70px !important;
-    height: 70px;
-    font-size: 2.5rem;
+    width: 50px !important;
+    height: 50px;
+    font-size: 1.8rem;
     padding: 0;
-    margin-top: 7rem !important;
+    margin-top: 6rem !important;
   
   }
   .counter{
@@ -175,6 +177,13 @@
     margin-bottom: 0;
   }
 
+  .winner_heading{
+    font-size: 26px;
+    margin-bottom: 0rem !important;
+    margin-top: 3px !important;
+    text-shadow: 2px 1px 0px #fff,
+    5px 4px 0px rgba(0, 0, 0, 0.15);
+  }
 
 
 }
