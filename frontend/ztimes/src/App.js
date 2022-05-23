@@ -26,12 +26,13 @@ function convertTZ( date, tzString ) {
   return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
 }
 function App() {
-  const [ currTime, setCurrTime ]=useState( convertTZ( new Date(), 'Asia/Kolkata' ).toLocaleTimeString( [], { timeStyle: 'short' } ) )
+  const [ currTime, setCurrTime ]=useState( (convertTZ( new Date(), 'Asia/Kolkata' )).toString().split(' ')[4].split(':').slice(0,2).join(':'))
+
   useEffect( () => {
     Aos.init( { duration: 2000, offset: 50, once: true } );
 
     setInterval( () => {
-      const currentInd=convertTZ( new Date(), 'Asia/Kolkata' ).toLocaleTimeString( [], { timeStyle: 'short' } );
+      const currentInd=(convertTZ( new Date(), 'Asia/Kolkata' )).toString().split(' ')[4].split(':').slice(0,2).join(':');
       setCurrTime( currentInd );
 
     }, 2000 );
@@ -39,7 +40,8 @@ function App() {
 
   }, [] )
 
-  const slot1=[ "3:05 PM", "3:06 PM", "3:07 PM", "3:08 PM", "3:09 PM" ];
+  //Indian time 24 hours format
+  const slot1=[ "15:30" ];
 
   return (
     <>
