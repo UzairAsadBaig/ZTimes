@@ -7,6 +7,7 @@ import { countDown } from './ModelWinner';
 import ReactCanvasConfetti from "react-canvas-confetti";
 import WelcomeText from './WelcomeText';
 import { Animated } from "react-animated-css";
+import ReactHowler from 'react-howler'
 
 
 
@@ -352,7 +353,9 @@ const CounterResult=() => {
   return (
 
     <>
-
+      <ReactHowler
+        src={require( './../TYCLUF5-countdown.mp3' )} loop={true} playing={true}
+      />
 {/* <h1 ref={welcomeRef}  data-aos="zoom-in" className=" text-center welcome_draw">Welcome to live draw</h1> */}
 <div class="container" ref={welcomeRef} data-aos="zoom-in" style={{marginTop:'20rem',marginBottom:'18rem'}}>
   <div class="row">
@@ -369,21 +372,22 @@ const CounterResult=() => {
 
 
 
-        <div  ref={counterRef} style={{display:'none'}}  className="counter row justify-content-center" data-aos="zoom-in">
+        <div className='shakir'>
+          <div ref={counterRef} style={{ display: 'none' }} className="counter row justify-content-center" data-aos="zoom-in">
 
-          {/* <div className='live_logo_display'>
+            {/* <div className='live_logo_display'>
             <img src={require( '../img/logo-01.png' )} className='vid_live' alt="" />
 
           </div> */}
 
-          <div className="count col-3">{random.num1}</div>
-          <div className="count col-3">{random.num2}</div>
-          <div className="count col-3">{random.num3}</div>
-          <div className="count col-3">{random.num4}</div>
+            <div className="count col-3">{random.num1}</div>
+            <div className="count col-3">{random.num2}</div>
+            <div className="count col-3">{random.num3}</div>
+            <div className="count col-3">{random.num4}</div>
 
 
 
-          {/* cw&&cw.map( ( el, i ) => {
+            {/* cw&&cw.map( ( el, i ) => {
         return <>
         <h1 className='text-center' style={{ textDecoration: "underline" }}>Winner {cw?.length>1? i+1:""}</h1>
         <div className="count">{el.winner.num1}</div><div className="count">{el.winner.num2}</div><div className="count">{el.winner.num3}</div><div className="count">{el.winner.num4}</div>
@@ -394,39 +398,41 @@ const CounterResult=() => {
 
 
 
-        </div>
-
-
-        <div ref={winnerRef} style={{display:'none'}}  >
-
-          {/* <h1 className='text-center my-5'>Winners</h1> */}
-
-          <div className="row text-center">
-
-            {
-
-              data.data[ 0 ]?.winners.length===1? <><h1 className='text-center winner_heading mt-3'>1st Winner</h1><div className="col-12"><Resultbox num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div></>
-
-                :
-
-                <>
-                  <h1 className='text-center mt-4 winner_heading'>1st Winner</h1>
-                  <div className="col-12" key="1"><Resultbox label="Winner 1" num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div>
-                  <h1 className='text-center mt-1 winner_heading'>2nd Winner</h1>
-                  <div className="col-md-3 col-6" key="2"><Resultbox label="Winner 2" num1={nums2.num1} num2={nums2.num2} num3={nums2.num3} num4={nums2.num4} /></div>
-                  <div className="col-md-3 col-6" key="3"><Resultbox label="Winner 3" num1={nums3.num1} num2={nums3.num2} num3={nums3.num3} num4={nums3.num4} /></div>
-                  <div className="col-md-3 col-6" key="4"><Resultbox label="Winner 4" num1={nums4.num1} num2={nums4.num2} num3={nums4.num3} num4={nums4.num4} /></div>
-                  <div className="col-md-3 col-6" key="5"><Resultbox label="Winner 5" num1={nums5.num1} num2={nums5.num2} num3={nums5.num3} num4={nums5.num4} /></div>
-                </>
-
-            }
-
-
-
           </div>
 
 
+          <div ref={winnerRef} style={{ display: 'none' }}  >
+
+            {/* <h1 className='text-center my-5'>Winners</h1> */}
+
+            <div className="row text-center">
+
+              {
+
+                data.data[ 0 ]?.winners.length===1? <><h1 className='text-center winner_heading mt-3'>1st Winner</h1><div className="col-12"><Resultbox num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div></>
+
+                  :
+
+                  <>
+                    <h1 className='text-center mt-4 winner_heading'>1st Winner</h1>
+                    <div className="col-12" key="1"><Resultbox label="Winner 1" num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div>
+                    <h1 className='text-center mt-1 winner_heading'>2nd Winner</h1>
+                    <div className="col-md-3 col-6" key="2"><Resultbox label="Winner 2" num1={nums2.num1} num2={nums2.num2} num3={nums2.num3} num4={nums2.num4} /></div>
+                    <div className="col-md-3 col-6" key="3"><Resultbox label="Winner 3" num1={nums3.num1} num2={nums3.num2} num3={nums3.num3} num4={nums3.num4} /></div>
+                    <div className="col-md-3 col-6" key="4"><Resultbox label="Winner 4" num1={nums4.num1} num2={nums4.num2} num3={nums4.num3} num4={nums4.num4} /></div>
+                    <div className="col-md-3 col-6" key="5"><Resultbox label="Winner 5" num1={nums5.num1} num2={nums5.num2} num3={nums5.num3} num4={nums5.num4} /></div>
+                  </>
+
+              }
+
+
+
+            </div>
+
+
+          </div>
         </div>
+
       </>}
     </>
   )

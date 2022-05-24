@@ -55,7 +55,7 @@ export default function Dashboard() {
   const slot1Date=new Date( new Date().setHours( 11, 30, 0, 0 ) )
   const slot2Date=( moment().set( "hour", 12 ).set( "minute", 30 ) )._d
   const slot3Date=( moment().set( "hour", 16 ).set( "minute", 7 ) )._d
-  const slot4Date=( moment().set( "hour", 17 ).set( "minute", 30 ) )._d
+  const slot4Date=( moment().set( "hour", 17 ).set( "minute", 45 ) )._d
   const slot5Date=( moment().set( "hour", 14 ).set( "minute", 34 ) )._d
 
   const preTime=30*60*1000;

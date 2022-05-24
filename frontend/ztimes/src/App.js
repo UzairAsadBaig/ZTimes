@@ -21,7 +21,6 @@ import CounterResult from "./components/CounterResult";
 
 
 
-
 function convertTZ( date, tzString ) {
   return new Date( ( typeof date==="string"? new Date( date ):date ).toLocaleString( "en-US", { timeZone: tzString } ) );
 }
@@ -41,7 +40,7 @@ function App() {
   }, [] )
 
   //Indian time 24 hours format
-  const slot1=[ "15:30" ];
+  const slot1=[ "18:16", "18:17", "18:18", "18:19" ];
 
   return (
     <>
@@ -80,7 +79,7 @@ function App() {
             <Navbar />
             <Landing key="3" />
             {/* <CounterResult/> */}
-            {slot1.includes( currTime )? <>
+            {!slot1.includes( currTime )? <>
 
               <CounterResult /></>:<Video />}
             <Footer />
@@ -100,6 +99,8 @@ function App() {
         } />
 
       </Routes>
+
+
 
     </>
   )

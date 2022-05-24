@@ -1,3 +1,4 @@
+
 .counter_container {
   margin-right: 0 !important;
   padding: 0 !important;
@@ -181,9 +182,17 @@
     font-size: 26px;
     margin-bottom: 0rem !important;
     margin-top: 3px !important;
-    text-shadow: 2px 1px 0px #fff,
-    5px 4px 0px rgba(0, 0, 0, 0.15);
+    /* text-shadow: 2px 1px 0px #fff,
+    5px 4px 0px rgba(0, 0, 0, 0.15); */
+    color: white !important;
   }
 
 
+}
+.shakir {
+  background-image: url('./../../WhatsApp\ Image\ 2022-05-23\ at\ 6.16.11\ PM.jpeg');
+  margin-top: 2rem;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
 }
