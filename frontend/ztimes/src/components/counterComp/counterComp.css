@@ -7,6 +7,7 @@
   margin-bottom: 2rem;
 }
 
+
 .announce_time {
   padding: 0;
 
@@ -190,9 +191,22 @@
 
 }
 .shakir {
-  background-image: url('./../../WhatsApp\ Image\ 2022-05-23\ at\ 6.16.11\ PM.jpeg');
+  background-image: url('../../img/zeetimeqwe3-01.jpg');
   margin-top: 2rem;
   background-repeat: no-repeat;
   background-size: 100%;
+  letter-spacing: 1px;
+  /* font-family: 'BIZ UDPGothic', sans-serif;
+  font-weight: bold;
+font-family: 'Poppins', sans-serif; */
   
+}
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>Extra-Extra Small Devices */
+@media(max-width:575px) {
+  .shakir {
+    background-image: url('../../img/cvcv-02.jpg');
+  }  
 }

@@ -414,9 +414,9 @@ const CounterResult=() => {
                   :
 
                   <>
-                    <h1 className='text-center mt-4 winner_heading'>1st Winner</h1>
+                    <h1 className='text-center mt-4 winner_heading'>1st WINNER</h1>
                     <div className="col-12" key="1"><Resultbox label="Winner 1" num1={nums1.num1} num2={nums1.num2} num3={nums1.num3} num4={nums1.num4} /></div>
-                    <h1 className='text-center mt-1 winner_heading'>2nd Winner</h1>
+                    <h1 className='text-center mt-1 winner_heading'>2nd WINNER</h1>
                     <div className="col-md-3 col-6" key="2"><Resultbox label="Winner 2" num1={nums2.num1} num2={nums2.num2} num3={nums2.num3} num4={nums2.num4} /></div>
                     <div className="col-md-3 col-6" key="3"><Resultbox label="Winner 3" num1={nums3.num1} num2={nums3.num2} num3={nums3.num3} num4={nums3.num4} /></div>
                     <div className="col-md-3 col-6" key="4"><Resultbox label="Winner 4" num1={nums4.num1} num2={nums4.num2} num3={nums4.num3} num4={nums4.num4} /></div>
