@@ -18,7 +18,7 @@ export default function DrawTable( props ) {
       title: 'Date and time',
       dataIndex: 'time',
       key: 'time',
-      width: 10,
+      width: 50,
       align: 'center'
 
     },
@@ -28,7 +28,7 @@ export default function DrawTable( props ) {
       title: 'Draw',
       dataIndex: 'draw',
       key: 'draw',
-      width: 90,
+      width: 50,
       align: 'center',
     },
   ];

@@ -1,5 +1,5 @@
 .ant-modal{
-    width: 1400px !important;
+    width: 1000px !important;
     text-align: center !important;
     height: 100vh !important;
 }
@@ -11,4 +11,23 @@
 }
 .ant-modal-confirm-title .ant-modal-confirm-content{
     font-size: 20rem !important;
+
+}
+.ant-modal-confirm-body-wrapper{
+    background-color: white;
+}
+.ant-modal-content{
+    background-color: white;
+    border-radius: 1rem;
+    border: 5px solid #ff7d03e6 !important;
+    
+   
+}
+.ant-modal-confirm-body .ant-modal-confirm-title{
+    color: #ff7d03e6 !important;
+}
+
+.ant-modal-wrap{
+background-image: linear-gradient(62deg, #373b44 0%, #101010 90%);
+margin-top: 5rem;
 }

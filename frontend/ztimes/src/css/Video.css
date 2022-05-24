@@ -84,7 +84,7 @@ video[poster] {
 }
 
   .video{
-    margin-top: 7rem !important;
+    margin-top: .1rem !important;
     margin-bottom: -7rem !important;
   }
   .vid_live_logo{
@@ -102,7 +102,7 @@ video[poster] {
     font-size: 12px;
   }
   .marquee_div{
-    top: -4rem;
+    top: -6rem;
   }
 
   
